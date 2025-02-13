@@ -1,0 +1,124 @@
+.section {
+  &__header {
+    font-size: 2.4rem;
+    padding-bottom: 4rem;
+    position: relative;
+
+    @include laptop {
+      text-align: center;
+    }
+
+    &-color {
+      color: var(--color-text-light);
+    }
+
+    &-description {
+      font-size: 1.2rem;
+      width: 45.6rem;
+      padding-bottom: 4rem;
+
+      @include laptop {
+        margin: 0 auto;
+      }
+
+      @include mobile {
+        font-size: 1rem;
+        width: 30rem;
+      }
+    }
+
+    &-some-text {
+      position: absolute;
+      left: 4rem;
+      font-size: 1.2rem;
+      min-width: 45.6rem;
+
+      @include laptop {
+        left: 6rem;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &__shape-purple {
+      background: var(--color-gradient-purple);
+      border-radius: var(--border-radius-left);
+      box-shadow: var(--shadow-purple);
+      position: absolute;
+      right: 13rem;
+      top: 4rem;
+      width: 106px;
+      height: 86px;
+
+      @include laptop {
+        left: -7rem;
+        top: 2rem;
+      }
+
+      @include mobile {
+        left: -2rem;
+        top: -2rem;
+        z-index: 0;
+      }
+    }
+
+    &__shape-orange {
+      background: var(--color-gradient-orange);
+      border-radius: var(--border-radius-right);
+      box-shadow: var(--shadow-orange);
+      position: absolute;
+      right: -7rem;
+      top: 14rem;
+      width: 355px;
+      height: 288px;
+    }
+  }
+
+  &__body {
+    &-container {
+      position: relative;
+
+      @include laptop {
+        width: 10rem;
+      }
+
+      &-video {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__video {
+          justify-content: center;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+
+    &-images {
+      position: absolute;
+      left: 10rem;
+
+      @include laptop {
+        rotate: 55deg;
+        top:  3rem;
+        left: 2rem;
+        width: 220px;
+        height: 120px;
+      }
+    }
+
+    &__shape-green {
+      background: var(--color-gradient-green);
+      border-radius: var(--border-radius-bottom);
+      box-shadow: var(--shadow-green);
+      position: absolute;
+      right: 0;
+      top: 17rem;
+      width: 162px;
+      height: 131px;
+    }
+  }
+}

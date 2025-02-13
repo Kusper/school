@@ -1,0 +1,171 @@
+/**
+  Нормалізація блочної моделі
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Нормалізація скролбару
+ */
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/**
+  Прибираємо внутрішні відступи зліва тегам списків,
+  у яких є атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Прибираємо зовнішні відступи body і двом іншим тегам,
+  у яких є атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Забираємо зовнішні відступи вертикалі потрібним тегам,
+  у яких є атрибут class
+ */
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl
+):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Прибираємо стандартний маркер маркованого списку,
+  у якого є атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляємо вертикальні зовнішні відступи параграфа,
+  оголошуємо локальну змінну для зовнішнього відступу вниз,
+  щоб уникнути взаємодію з більш складним селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+
+  margin-block: 0;
+}
+
+/**
+  Зовнішній відступ до параграфа без атрибута class,
+  який розташований не останнім серед своїх сусідніх елементів
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+
+/**
+  Спрощуємо роботу із зображеннями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наслідуємо властивості шрифту для полів введення
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Стане в нагоді в більшості ситуацій
+    (Коли, наприклад, потрібно буде "притиснути" футер до низу сайту)
+   */
+  height: 100%;
+}
+
+/**
+  Плавний скролл
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Стане в нагоді в більшості ситуацій
+    (Коли, наприклад, потрібно буде "притиснути" футер до низу сайту)
+   */
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+/**
+  Наводимо до єдиного кольору svg-елементи
+ */
+svg *[fill] { fill: currentColor }
+svg *[stroke] { stroke: currentColor }
+
+/**
+  Чиним баг затримки зміни кольору при взаємодії з svg-елементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Видаляємо всі анімації та переходи для людей,
+  які вважають за краще їх не використовувати
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

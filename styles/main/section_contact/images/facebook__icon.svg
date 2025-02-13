@@ -1,0 +1,12 @@
+<svg width="90.000000" height="90.000000" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<pattern id="pattern_54_2540" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+			<use xlink:href="#image54_254_0" transform="matrix(0.020833,0,0,0.020833,0,0)"/>
+		</pattern>
+		<image id="image54_254_0" width="48.000000" height="48.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAQRJREFUaIHt1jGKwkAYBeD3VFC2EZUt1IW9gL2ttb1N2ErYE3kFKwOClWfwBFpsY5PKXiz0t5W4iBmTmQjvqzP//G9mkgwgIiIiIm+LPicbYVQ7dr+mVkHEiw1Atm972CTzzP3Ucu3wgQkm1X23viIxpgFgPmtXyaXKE/b9xi+Jcd51vQWgWVREXW9HyAyD9KkxIOp8tJbrv9nJta63AKQ109+M7+S0iDE7v1LX2xECeDdXjPil5gGvAYpR6H9g2PuxDI8fNsn8M+scZdqBrcugEgXgzmVUaQKQ5hTA213ov/fB5e6TVpodcKUAoSlAaAoQmgKEpgChKUBoChDa2wcQEQnrCospLEw1EMRHAAAAAElFTkSuQmCC"/>
+	</defs>
+	<rect id="facebook__icon" width="90.000000" height="90.000000" fill="url(#pattern_54_2540)" fill-opacity="1.000000"/>
+</svg>

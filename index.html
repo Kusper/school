@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Всезнайка - Освітній центр</title>
+</head>
+<body>
+<header class="header">
+    <div class="header__inner container">
+        <a class="header__logo logo" href="./index.html">
+            <img
+                    class="logo__images"
+                    src="./images/logo.svg"
+                    alt="Всезнайка - найкращі з найкращих"
+                    loading="lazy">
+        </a>
+        <nav class="header__menu hidden-mobile">
+            <ul class="header__menu-list">
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/">Оголошення</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/">Фото галерея</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/">Наші викладачі</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/">Про нас</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/">Вхід
+                        <img
+                                class="header__menu-link-img"
+                                src="./images/account.svg"
+                                alt="Вхід в аккаунт"
+                                width="20" height="20" loading="lazy">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__phone-number hidden-mobile">
+            <div class="header__phone-number-icon">
+                <img
+                        class="phone__icon"
+                        src="./images/phone.svg"
+                        alt="Номер телефона"
+                        loading="lazy">
+            </div>
+            <span class="header__phone-number__text">099 683 4331</span>
+        </div>
+        <button
+                class="button__burger-menu burger-button visible-mobile"
+                type="button"
+                onclick="mobileOverlay.showModal()">
+            <span class="visually-hidden">Відкрити меню</span>
+        </button>
+    </div>
+</header>
+
+<main class="content">
+    <section class="section container">
+        <div class="section__body">
+            <div class="hero">
+                <div class="hero__main">
+                    <div class="hero__shape-orange hidden-mobile"></div>
+                    <div class="hero__shape-green-right"></div>
+                    <div class="hero__shape-purple"></div>
+                    <div class="hero__body">
+                        <div class="hero__message hidden-mobile">
+                            <img class="hero__message-image"
+                                 src="images/hero_message.svg"
+                                 alt=""
+                                 loading="lazy">
+                        </div>
+                        <h1 class="hero__title">
+                            <span class="hero__title-orange-text">Вивчайте будь-які предмети</span> онлайн <br>
+                            з будь-якої точки світу або офлайн у Сумах
+                        </h1>
+                        <div class="hero__description">
+                            <p>Онлайн школа репетиторів з програмою, що <br> відповідає вашим цілям та інтересам.</p>
+                        </div>
+                        <div class="hero__shape-green-left hidden-mobile"></div>
+                    </div>
+                    <div class="hero__container-image">
+                        <img
+                                class="hero__image"
+                                src="./images/hero_bg.svg"
+                                alt=""
+                                loading="lazy">
+                    </div>
+                </div>
+                <div class="hero__static">
+                    <div class="hero__static-container">
+                        <h2 class="visually-hidden">Наша статистика</h2>
+                        <ul class="hero__static-list">
+                            <li class="hero__static-item"><span class="hero__static-number">8</span></li>
+                            <li class="hero__static-item-line"></li>
+                            <li class="hero__static-item">років успішної <br> роботи</li>
+                            <li class="hero__static-item"><span class="hero__static-number">1000+</span></li>
+                            <li class="hero__static-item-line"></li>
+                            <li class="hero__static-item">Понад 1000 <br> випускників</li>
+                            <li class="hero__static-item"><span class="hero__static-number">7</span></li>
+                            <li class="hero__static-item-line"></li>
+                            <li class="hero__static-item">Школа працює 7 <br> днів на тиждень</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section container">
+        <header class="section__header">
+            <h2 class="section__header">Школа
+                <span class="section__header-color">"Всезнайка"</span>
+            </h2>
+            <div class="section__header-description">
+                <p>Місія нашої школи полягає в тому, щоб відкрити двері у світ знань з будь-яких предметів,
+                    подарувати свободу спілкування в будь-якій країні та дати можливість безперешкодно черпати
+                    знання з раніше недоступних джерел інформації.
+                </p>
+            </div>
+            <div class="section__header__shape-purple"></div>
+            <div class="section__header-some-text">
+                <p>А краще подивись відео!</p>
+            </div>
+            <div class="section__header__shape-orange"></div>
+        </header>
+        <div class="section__body-container">
+            <!--               <div class="section__body-container">-->
+            <!--                    <div class="section__body-container-video">-->
+            <!--                        <video controls class="section__body-container-video__video">-->
+            <!--                            <source src="./video/" type="video/mp4">-->
+            <!--                        </video>-->
+            <!--                    </div>-->
+            <!--                   <div class="section__body__shape-green"></div>-->
+            <!--               </div>-->
+        </div>
+    </section>
+    <section class="section container">
+        <header class="section__header">
+            <h2 class="section__header">Наш
+                <span class="section__header-color">календар уроків</span>
+            </h2>
+        </header>
+        <div class="schedule-container">
+            <table class="schedule">
+                <thead class="sticky">
+                <tr>
+                    <th></th>
+                    <th>Понеділок, </th>
+                    <th>Вівторок, </th>
+                    <th>Середа, </th>
+                    <th>Четверг, </th>
+                    <th>Пʼятниця, </th>
+                    <th>Субота, </th>
+                    <th>Неділя, </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>7:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>7:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>8:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>8:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>10:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>11:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>11:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>12:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>13:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>13:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>14:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>14:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>15:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>15:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>16:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>16:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>17:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>17:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>18:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>18:30</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="section container">
+        <header class="section__header">
+            <h2 class="section__header">Наші
+                <span class="section__header-color">переваги</span>
+            </h2>
+        </header>
+        <div class="section__advantages">
+            <div class="section__advantages-container">
+                <div class="section__advantages-item">
+                    <img
+                            class="section__advantages-item-img"
+                            src="styles/main/section_advantages/images/advantages_f.svg"
+                            alt="Безкоштовна консультація для новачків"
+                            loading="lazy">
+                </div>
+                <div class="section__advantages-item">
+                    <img
+                            class="section__advantages-item-img"
+                            src="styles/main/section_advantages/images/advantages_s.svg"
+                            alt="Найкращі викладачі міста"
+                            loading="lazy">
+                </div>
+                <div class="section__advantages-item">
+                    <img
+                            class="section__advantages-item-img"
+                            src="styles/main/section_advantages/images/advantages_t.svg"
+                            alt="Завжди на зв'язку"
+                            loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section container">
+        <header class="section__header">
+            <h2 class="section__header right">Наші
+                <span class="section__header-color">викладачі</span>
+            </h2>
+        </header>
+        <div class="section_teacher-container">
+            <div class="section_teacher-item">
+                <img
+                        class="section_teacher-item-img teacher-img"
+                        src="styles/main/section_teacher/images/teacher.svg"
+                        alt="Фото викладача"
+                        loading="lazy">
+            </div>
+            <div class="section_teacher-item hidden-tablet">
+                <img
+                        class="section_teacher-item-img"
+                        src="styles/main/section_teacher/images/background_description-desktop.svg"
+                        alt="Характеристика викладача"
+                        loading="lazy">
+            </div>
+            <div class="section_teacher-item visible-tablet">
+                <img
+                        class="section_teacher-item-img"
+                        src="styles/main/section_teacher/images/background_description-tablet.svg"
+                        alt="Характеристика викладача"
+                        loading="lazy">
+            </div>
+        </div>
+        <div class="section_teacher-ribbon">
+            <div class="section_teacher-ribbon-item hidden-tablet">
+                <figure class="section_teacher-ribbon-container">
+                    <img
+                            class="section_teacher-item-img teacher-ribbon"
+                            src="styles/main/section_teacher/images/ribbon_teacher-f.svg"
+                            alt="Олена Валеріївна"
+                            loading="lazy">
+                    <figcaption class="section_teacher-item-ribbon-text">Олена Валеріївна</figcaption>
+                </figure>
+            </div>
+            <div class="section_teacher-ribbon-item hidden-tablet">
+                <figure class="section_teacher-ribbon-container">
+                    <img
+                            class="section_teacher-item-img teacher-ribbon"
+                            src="styles/main/section_teacher/images/ribbon_teacher-f.svg"
+                            alt=""
+                            loading="lazy">
+                    <figcaption class="section_teacher-item-ribbon-text">Олена Валеріївна</figcaption>
+                </figure>
+            </div>
+            <div class="section_teacher-ribbon-item hidden-tablet">
+                <figure class="section_teacher-ribbon-container">
+                    <img
+                            class="section_teacher-item-img teacher-ribbon"
+                            src="styles/main/section_teacher/images/ribbon_teacher-f.svg"
+                            alt=""
+                            loading="lazy">
+                    <figcaption class="section_teacher-item-ribbon-text">Олена Валеріївна</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <footer class="section container">
+        <header class="section__header ">
+            <h2 class="section__header">Контакти</h2>
+        </header>
+        <div class="section_contact">
+            <div class="section_contact-container">
+                <div class="section_contact-map">
+                    <iframe
+                            class="section_contact-map-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2515.3216023313453!2d34.7998332!3d50.9177676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4129022f64095555%3A0x836d42cd782972c9!2z0JLRgdC10LfQvdCw0LnQutCw!5e0!3m2!1sru!2sua!4v1739012943534!5m2!1sru!2sua"
+                            width="600"
+                            height="450"
+                            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+                    </iframe>
+                </div>
+                <div class="section_contact-text">
+                    <div class="section_contact-text-description">
+                        <div class="section_contact-text-description-container">
+                            <img
+                                    class="section_contact-text-description-img"
+                                    src="styles/main/section_contact/images/number__phone.svg"
+                                    alt="Номер телефону"
+                                    loading="lazy">
+                            <h3>099 683 4331</h3>
+                        </div>
+                        <div class="section_contact-text-description-container">
+                            <img
+                                    class="section_contact-text-description-img"
+                                    src="styles/main/section_contact/images/map__icon.svg"
+                                    alt="Адреса офісу"
+                                    loading="lazy">
+                            <h3>вул. Британська, 26, 3пов, офіс 2</h3>
+                        </div>
+                        <div class="section_contact-text-description-container">
+                            <img
+                                    class="section_contact-text-description-img"
+                                    src="styles/main/section_contact/images/time__icon.svg"
+                                    alt="Години"
+                                    loading="lazy">
+                            <h3>з ПН-ПТ з 9:00 до 17:00</h3>
+                        </div>
+                    </div>
+                    <div class="section_contact-text-sociable">
+                        <div class="section_contact-sociable-item">
+                            <a
+                                    href="https://www.instagram.com/repetitor_in_sumy/"
+                                    target="_blank">
+                                <img
+                                        class="section_contact-sociable-item-img"
+                                        src="styles/main/section_contact/images/instagram__icon.svg"
+                                        alt="instagram"
+                                        loading="lazy">
+                            </a>
+                        </div>
+                        <div class="section_contact-sociable-item">
+                            <a
+                                    href="https://www.facebook.com/p/%D0%A6%D0%B5%D0%BD%D1%82%D1%80-%D1%80%D0%B5%D0%BF%D0%B5%D1%82%D0%B8%D1%82%D0%BE%D1%80%D0%BE%D0%B2-%D0%92%D1%81%D0%B5%D0%B7%D0%BD%D0%B0%D0%B9%D0%BA%D0%B0-100063481153383/"
+                                    target="_blank">
+                                <img
+                                        class="section_contact-sociable-item-img"
+                                        src="styles/main/section_contact/images/facebook__icon.svg"
+                                        alt="facebook"
+                                        loading="lazy">
+                            </a>
+                        </div>
+                        <div class="section_contact-sociable-item">
+                            <a
+                                    href=""
+                                    target="_blank">
+                                <img
+                                        class="section_contact-sociable-item-img"
+                                        src="styles/main/section_contact/images/telegram__icon.svg"
+                                        alt="telegram"
+                                        loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</main>
+
+<dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+    <form class="mobile-overlay__close-button-wrapper" method="dialog">
+        <button
+                class="mobile-overlay__close-button cross-button"
+                type="submit">
+            <span class="visually-hidden">Закрити меню</span>
+        </button>
+    </form>
+    <div class="mobile-overlay__body">
+        <ul class="mobile-overlay__list">
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link" href="/">Оголошення</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link" href="/">Фото галерея</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link" href="/">Наші викладачі</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link" href="/">Про нас</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link-icon" href="/">Вхід
+                    <img
+                            class="mobile-overlay__img"
+                            src="./images/account.svg"
+                            alt="Вхід в аккаунт"
+                            loading="lazy">
+                </a>
+            </li>
+        </ul>
+    </div>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.content {
+  @include fluid-container(1920, 780);
+
+  background: var(--color-background-main);
+  border-radius: var(--border-radius);
+  padding-block: var(--section-padding-y);
+  width: var(--section-width);
+  margin-top: 30px;
+
+  @include mobile {
+    margin: 20px 20px;
+  }
+}
+
+.section {
+  margin-top: 70px;
+
+  @include desktop {
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,149 @@
+.header {
+  @include fluid-container(1920, 780);
+
+  padding-top: 46px;
+  box-shadow: var(--shadow-black);
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 1;
+
+  @include desktop {
+    padding-top: 36px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 44px;
+
+    @include desktop {
+      column-gap: 15px;
+    }
+  }
+
+  &__logo {
+    width: 286px;
+    height: 80px;
+    margin-bottom: 20px;
+
+    @include desktop {
+      max-width: 186px;
+      height: 50px;
+    }
+
+    @include tablet {
+      max-width: 120px;
+      height: 40px;
+      margin-top: 20px;
+    }
+
+    @include mobile {
+      max-width: 220px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__menu {
+    font-size: 18px;
+
+    @include desktop {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    @include tablet {
+    font-size: 10px;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 22px;
+
+      @include desktop {
+        column-gap: 15px;
+      }
+    }
+
+    &-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      height: 28px;
+      gap: 5px;
+
+      @include desktop {
+        gap: 3px;
+      }
+
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: 2px;
+        background-color: currentColor;
+        transition: 0.2s;
+      }
+
+      &-img {
+        margin-top: 1px;
+        width: 20px;
+        height: 20px;
+
+        @include tablet {
+          max-width: 10px;
+        }
+      }
+    }
+  }
+
+  &__phone-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      margin-bottom: 5px;
+    }
+
+    &-icon {
+      width: 105px;
+      height: 74px;
+      margin-bottom: 20px;
+
+      @include desktop {
+        max-width: 70px;
+        height: 40px;
+      }
+
+      @include tablet {
+        max-width: 40px;
+        margin-bottom: 0;
+      }
+    }
+
+    &__text {
+      font-size: 24px;
+
+      @include desktop {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+
+      @include tablet {
+        font-size: 12px;
+      }
+    }
+  }
+}

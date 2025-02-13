@@ -1,0 +1,21 @@
+@import
+"normalize",
+"fonts",
+"mixins",
+"media",
+"variables",
+"utils",
+"globals";
+
+@import 'main/header/burger-button',
+'main/header/header',
+'main/header/cross-button',
+'main/header/mobile-overlay',
+'main/main',
+'main/hero',
+'main/section__about-as/section',
+'main/section_table/table',
+'main/section_advantages/_advantages',
+'main/section_teacher/_teacher',
+'main/section_contact/_contact';
+

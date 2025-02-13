@@ -1,0 +1,55 @@
+@mixin  fluid-text($max: 48, $min: 14) {
+  font-size: clamp(#{$min}px, #{$max / 1880 * 100}vw, #{$max}px);
+}
+
+@mixin fluid-container($size1: 1440, $size2: 320) {
+  max-width: calc(100% - (2 * ((100vw - #{$size2}px) / (#{$size1} - #{$size2}) * (127 - 16) + 16px)));
+  margin: 0 auto;
+  padding: 0 calc(((100vw - #{$size2}px) / (#{$size1} - #{$size2}) * (127 - 16) + 16px));
+  box-sizing: border-box;
+}
+
+@mixin reset-link {
+  color: inherit;
+
+  &,
+  &:hover, {
+    text-decoration: none;
+  }
+}
+
+@mixin reset-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin rel-center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin square($size) {
+  width: $size;
+  aspect-ratio: 1;
+}

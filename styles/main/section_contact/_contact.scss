@@ -1,0 +1,62 @@
+.section {
+
+  &_contact {
+
+    &-text {
+      padding-left: 30px;
+
+      &-description {
+
+        @include tablet {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &-container {
+          display: flex;
+          flex-direction: row;
+          gap: 1.5rem;
+        }
+      }
+
+      &-sociable {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 3rem;
+        padding-top: 2rem;
+
+        @include tablet {
+          justify-content: center;
+        }
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      align-items: center;
+
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    &-map {
+      border-radius: 50px;
+      box-shadow: 0 22px 45px rgb(251, 155, 52);
+      color: rgba(251, 155, 52, 0.4);
+      overflow: hidden;
+
+      &-iframe {
+        border-radius: 50px;
+      }
+    }
+  }
+}

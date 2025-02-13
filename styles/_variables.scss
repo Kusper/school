@@ -1,0 +1,48 @@
+:root {
+  --color-background-main: #F6EFE6;
+  --color-light: #FFFFFF;
+
+  --color-text-dark: #371A5C;
+  --color-text-dark-orange: #D53C13;
+  --color-text-light: #59C630;
+
+  --color-gradient-orange: radial-gradient(
+                  84.06% 65.07% at 50% 50%,
+                  rgb(251, 150, 56) 5.61%,
+                  rgb(251, 155, 52) 41.441%,
+                  rgba(245, 185, 26, 0.68) 100%
+  );
+  --color-gradient-purple: radial-gradient(
+                  50.00% 50.00% at 50% 50%,
+                  rgb(194, 137, 248),
+                  rgb(152, 74, 247) 0.037%,
+                  rgb(143, 62, 246) 100%
+  );  --color-gradient-green: radial-gradient(
+                circle,
+                rgb(136, 209, 109),
+                rgb(89, 198, 48));
+
+  --shadow-orange: -10px 31px 20px -2px rgba(252, 168, 78, 0.2);
+  --shadow-purple: 0px 8px 35px 0px rgb(161, 90, 248);
+  --shadow-purple-main: -43px 61px 20px 0px rgba(161, 90, 248, 0.47);
+  --shadow-green: 5px 15px 20px 0px rgba(89, 198, 48, 0.67);
+  --shadow-black: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  --border-radius-main: 200px;
+  --border-radius: 100px;
+  --border-radius-small: 20px;
+  --border-radius-medium: 60px;
+  --border-radius-lagre: 0, 100px, 0, 100px;
+  --border-radius-left: 800px 800px 0 800px;
+  --border-radius-right: 800px 800px 800px 0;
+  --border-radius-bottom: 0 800px 800px 800px;
+
+  --font-family-base: 'Montserrat', sans-serif;
+
+  --container-width: 1666px;
+  --container-padding-x: 15px;
+
+  --section-padding-y: 60px;
+
+  --transition-duration: 0.2s;
+}

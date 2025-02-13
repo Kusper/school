@@ -1,0 +1,12 @@
+<svg width="70.000000" height="70.000000" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<pattern id="pattern_54_2520" patternContentUnits="objectBoundingBox" width="1.000000" height="1.000000">
+			<use xlink:href="#image54_252_0" transform="matrix(0.02,0,0,0.02,0,0)"/>
+		</pattern>
+		<image id="image54_252_0" width="50.000000" height="50.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABHNCSVQICAgIfAhkiAAABF9JREFUaIHt2VuoVUUcx/GPViczfOqiFqlkYdlDkeGp7E7pSyFRZgcjCiWCiqQHjUiLeqhMim6QYSGZEXSh8qXIootEkaUGajcCUSo5YqlUXo7tHmaWa1/XXmvvfTwv+wvnYa/5/2d+s/6z/vOfOXTp0qVLl85zEh7AdziIr3DGkCoqyBSswD6Uqv7WDJ2sfPSgD19KRR/C+5iBM+OzP4dKYDPGYDF+k05gF5bi9DK7ybHtlyMtsBlTsRL7pRP4HndgZB37vmjz7pESmEUPZuEjlctnNa7GsAzfJ6P94kHWmMloLMQ26QT+wjOYkLOPNdHvukHQ15RevKZy+WzEPBzXwH4DPqnT1h/9TxsUpXXowRx8LRU/gLdweQOfEXg82pXwTVX7uPi8fxD01pC1fMZn+PVic5lPPyZW2cyMbR92VnKtkOrlswFz1V8+CdVRKOFfXFjH9qHY/kTHVEeS7LNW8exDbRRK+E9YkvV4L9rMbld4whg8jN/LBOwU3uy4HP7VUThY1s+iDL+t0WZSi7oPMwXLhNAnA2/BvepvXvUoj0JSeuyMv9/QOIonRJu9GN6K+HaXT0J1FH7GdKGSLeELHJvhf020W1t0Aq1mn3pUR2EZjhciUMKvOLlJHwui7XN5B52ktvbJ2ryyqI7CZmFShMyTFIZn5ejr9Wg/N8/AM6UTGMDbuCK/7grKozAgTGhEbJsbnx/AVTn72xJ9zs9jnGSFF+XLPvXIigJB+AEF3q6wDA8JLznrOzrMjjjAg8JHXpSsKBCW7a7YvqRAvxdHn/V5He5Teah5WcgWRzXxaxYFOFHIVCW8o1gKvSv6vVLAxy1CaVG+2+7AC7isjoBmUSAsh8+jzTphqRRhefS9p6AfOFvYvZOPLPnbjqcwTWUUNqmNAmGfeTXabMMpLWj5Nvpf0oJvBecIk/pJ7W1GoygkLJLuyOe1MHaPcItyCKNa8G9IrxCRvYLAWRm2s4UicEDrJ7pz4zg/tujflBVxgIUN2i/A39Fmfhvj3C6twwaFGzSufSbgj9i+vM1xnpX9wtpmlLB2B4TUWs76OPinOLrNcZJsN6PNfjL5IA5ya9mzidJE8I9Q4rfKcOyJfTUrKtsi2ajeLHs2Jz7bLZ3QCsX3DtLr0e1tqczB+DjQHmlJ83x8dj9uk37wmxQ/2d0UfVd3QGtTkipgevy9Lv5OrnzmSyOzW0gSeXks+j3SEaVNeFR64BkpnL8PCkvpZmml+4P0cmGJfEkg+Qav77jqOkyNg23FldJ66k5hNy4Jp8phwsV0ct75TLjEyCJJ4UVPpC0xXHqbskp6o5K8/QVV9pdK/3WwHRc16PdUaRWe916gbV6SnsfLa7B5DezHSveH/bi7js21sf3jTovNYprKQnIfbmzicwyeLvNZqfJKKSk2l3ZabDOSM0O/cBjLy2xpAbpRKBLHSpNDX2dl5mO01o7Ik9Wee5KjbdGbmyFnlLCZbhVOpKuEyHTp0qUD/A/bjof54A1vkAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<rect id="telegram__icon" width="70.000000" height="70.000000" fill="url(#pattern_54_2520)" fill-opacity="1.000000"/>
+</svg>

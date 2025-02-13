@@ -1,0 +1,50 @@
+.right {
+  float: right;
+
+  @include tablet {
+    float: none;
+  }
+}
+
+.section {
+
+  &_teacher {
+
+    &-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+
+      @include tablet {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &-item {
+      max-width: 37rem;
+    }
+
+    &-ribbon {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding-top: 2rem;
+      margin-bottom: 10rem;
+      gap: 1.5rem;
+
+      &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      &-text  {
+        font-size: 4rem;
+      }
+    }
+  }
+}
