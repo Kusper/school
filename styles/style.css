@@ -1171,6 +1171,12 @@ h1 {
   color: rgba(251, 155, 52, 0.4);
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  .section_contact-map {
+    margin: 1rem;
+    width: 80%;
+  }
+}
 .section_contact-map-iframe {
   border-radius: 50px;
 }
