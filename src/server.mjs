@@ -16,6 +16,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/html/index.html"));
 });
 
+app.get("/advertisement", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/html/advertisement.html"));
+});
+
 app.listen(PORT, () => {
     console.log(`Running on http://localhost:${PORT}`); 
 }); 
