@@ -54,6 +54,11 @@
       color: rgba(251, 155, 52, 0.4);
       overflow: hidden;
 
+      @include mobile {
+        margin: 1rem;
+        width: 80%;
+      }
+
       &-iframe {
         border-radius: 50px;
       }

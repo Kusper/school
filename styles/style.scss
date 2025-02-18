@@ -1,21 +1,22 @@
-@import
-"normalize",
-"fonts",
-"mixins",
-"media",
-"variables",
-"utils",
-"globals";
+@import "main/normalize",
+"main/fonts",
+"main/mixins",
+"main/media",
+"main/variables",
+"main/utils",
+"main/globals";
 
-@import 'main/header/burger-button',
-'main/header/header',
-'main/header/cross-button',
-'main/header/mobile-overlay',
-'main/main',
-'main/hero',
-'main/section__about-as/section',
-'main/section_table/table',
-'main/section_advantages/_advantages',
-'main/section_teacher/_teacher',
-'main/section_contact/_contact';
+//Головна
+@import 'pages/home/header/burger-button',
+'pages/home/header/header',
+'pages/home/header/cross-button',
+'pages/home/header/mobile-overlay',
+'pages/home/main',
+'pages/home/hero',
+'pages/home/section__about-as/section',
+'pages/home/section_table/table',
+'pages/home/section_advantages/advantages',
+'pages/home/section_teacher/teacher',
+'pages/home/section_contact/contact';
 
+//Оголошення
