@@ -6,9 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="robots" content="index, follow">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Познайомтесь з нашими досвідченими викладачами, які допоможуть вам успішно підготуватися до екзаменів.">
+    <meta name="description" content="Галерея фото навчального центру: учні на заняттях, робота в групах, репетиторство. Якісна освіта для дітей і дорослих.">
+    <meta name="keywords" content="навчання, уроки, репетиторство, освіта, школа, студенти">
     <link rel="stylesheet" href="../styles/style.css">
-    <title>Всезнайка - Оголошення</title>
+    <title>Всезнайка - Фотогалерея</title>
 </head>
 <body>
 <header class="header" itemscope itemtype="https://schema.org/Organization">
@@ -24,10 +25,10 @@
         <nav class="header__menu hidden-mobile" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <ul class="header__menu-list">
                 <li class="header__menu-item">
-                    <a class="header__menu-link active-pointer_header" href="/advertisement" itemprop="url">Оголошення</a>
+                    <a class="header__menu-link" href="/advertisement" itemprop="url">Оголошення</a>
                 </li>
                 <li class="header__menu-item">
-                    <a class="header__menu-link" href="/gallery" itemprop="url">Фотогалерея</a>
+                    <a class="header__menu-link active-pointer_header" href="/gallary" itemprop="url">Фото галерея</a>
                 </li>
                 <li class="header__menu-item">
                     <a class="header__menu-link" href="/" itemprop="url">Наші викладачі</a>
@@ -68,147 +69,105 @@
     </div>
 </header>
 <main class="content">
-    <section class="section container">
+    <section class="section container" itemscope itemtype="https://schema.org/ImageGallery">
         <div class="hero__shape-orange hidden-mobile"></div>
         <header class="section__header">
-            <h2 class="section__header">Оголошення</h2>
-        </header>
-        <div class="section_advertisement-new">
-            <div class="section_advertisement-new-img">
-                <img
-                        class="section_advertisement-new-img_image"
-                        src="../styles/pages/advertisement/section_advertisement-new/images/new-advertisement.svg"
-                        alt="Фото оголошення"
-                        loading="lazy">
-            </div>
-            <div class="section_advertisement-new_text hidden-tablet">
-                <h2 class="section_advertisement-new_text_name">
-                    Готуємось до НМТ
-                </h2>
-                <p class="section_advertisement-new_text_description">
-                    Шукаєш найкращий спосіб підготовки до НМТ/ЗНО? Тоді ми маємо для тебе чудову новину! 📚🎓
-                    <br> <br>
-                    🔔 Репетиторський центр «Всезнайка» оголошує відкритий набір на курс «Підготовка до НМТ/ЗНО».
-                    <br> <br>
-                    Чому варто обрати саме нас? <br>
-                    ➡️ Професійні викладачі з багаторічним досвідом. <br>
-                    ➡️ Індивідуальний підхід до кожного учня. <br>
-                    ➡️ Ефективна методика навчання. <br>
-                    ➡️ Комфортні умови навчання та дружня атмосфера.
-                    <br> <br>
-                    Ми пропонуємо: <br>
-                    1 курс з 4 предметів (математика, українська мова, англійська мова, історія України) <br>
-                    2 тривалість заняття 3 години в день (2 предмета в суботу, 2 предмета в неділю) <br>
-                    3 курс триває до травня місяця
-                    <br> <br>
-                    💰Вартість курсу на місяць 4000 грн 💰
-                </p>
-            </div>
-        </div>
-    </section>
-    <section class="section container">
-        <header class="section__header advertisement">
-            <h2 class="section__header right">Активні
-                <span class="section__header-color">оголошення</span>
+            <h2 class="section__header">Фотогалерея
+                <span class="section__header-color">нашого навчального центру</span>
             </h2>
         </header>
-        <div class="section_advertisement-active">
-            <div class="section_advertisement-active_list">
-                <div class="section_advertisement-active_list-item">
-                    <div class="section_advertisement-active_list-item-img">
-                        <img
-                                class="section_advertisement-active_list-item-img_image"
-                                src="../styles/pages/advertisement/section_advertisement-active/images/image_1.webp"
-                                alt="Фото активного оголошення"
-                                loading="lazy">
-                    </div>
-                    <div class="section_advertisement-active_list-item-text">
-                        <h3 class="section_advertisement-active_list-item-text-name">Набір в групу школярів</h3>
-                        <p class="section_advertisement-active_list-item-text-description">
-                            Для першого класу іде набір діток в групу, де діти будуть займатися 2 раза на тиждень по 2 заняття підряд.
-                        </p>
-                    </div>
+        <div class="section__gallery">
+            <div class="section__gallery-list">
+                <div class="section__gallery-item" itemscope itemtype="https://schema.org/ImageObject">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_1.webp"
+                            alt="Школяр уважно слухає вчителя на уроці математики"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_2.webp"
+                            alt="Діти працюють у групах, виконуючи завдання з географії"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_3.webp"
+                            alt="Персональна консультація викладача з учнем"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <meta itemprop="name" content="Учень уважно слухає вчителя">
+                    <meta itemprop="description" content="Момент з уроку, коли студент занурений у навчання.">
                 </div>
-                <div class="section_advertisement-active_list-item">
-                    <div class="section_advertisement-active_list-item-img">
-                        <img
-                                class="section_advertisement-active_list-item-img_image"
-                                src="../styles/pages/advertisement/section_advertisement-active/images/image_2.webp"
-                                alt="Фото активного оголошення"
-                                loading="lazy">
-                    </div>
-                    <div class="section_advertisement-active_list-item-text">
-                        <h3 class="section_advertisement-active_list-item-text-name">Скласти НМТ не складно</h3>
-                        <p class="section_advertisement-active_list-item-text-description">
-                            и знаєш ти, що скласти НМТ на високий бал цілком реально? 🌟🎯 <br>
-                            Всі секрети успіху в одному місці — ось що тобі потрібно зробити:
-                        </p>
-                    </div>
+                <div class="section__gallery-item" itemscope itemtype="https://schema.org/ImageObject">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_4.webp"
+                            alt="Учні за партою на уроці"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_5.webp"
+                            alt="Дівчина читає підручник, готуючись до контрольної"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_6.webp"
+                            alt="Персональна консультація викладача з учнем"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <meta itemprop="name" content="Групова робота студентів">
+                    <meta itemprop="description" content="Учні разом вирішують складну задачу.">
                 </div>
-                <div class="section_advertisement-active_list-item">
-                    <div class="section_advertisement-active_list-item-img">
-                        <img
-                                class="section_advertisement-active_list-item-img_image"
-                                src="../styles/pages/advertisement/section_advertisement-active/images/image_3.webp"
-                                alt="Фото активного оголошення"
-                                loading="lazy">
-                    </div>
-                    <div class="section_advertisement-active_list-item-text">
-                        <h3 class="section_advertisement-active_list-item-text-name">Експрес-курс "English"</h3>
-                        <p class="section_advertisement-active_list-item-text-description">
-                            Граматичний експрес-курс з англійської мови для 9-11 класів на літніх канікулах
-                        </p>
-                    </div>
+                <div class="section__gallery-item" itemscope itemtype="https://schema.org/ImageObject">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_7.webp"
+                            alt="Персональна консультація викладача з учнем"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_8.webp"
+                            alt="Учитель пояснює тему біля дошки"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_9.webp"
+                            alt="Учні за партою на уроці"
+                            loading="lazy"
+                            itemprop="contentUrl">
                 </div>
-            </div>
-            <div class="section_advertisement-active_list hidden-tablet">
-                <div class="section_advertisement-active_list-item">
-                    <div class="section_advertisement-active_list-item-img">
-                        <img
-                                class="section_advertisement-active_list-item-img_image"
-                                src="../styles/pages/advertisement/section_advertisement-active/images/image_1.webp"
-                                alt="Фото активного оголошення"
-                                loading="lazy">
-                    </div>
-                    <div class="section_advertisement-active_list-item-text">
-                        <h3 class="section_advertisement-active_list-item-text-name">Набір в групу школярів</h3>
-                        <p class="section_advertisement-active_list-item-text-description">
-                            Для першого класу іде набір діток в групу, де діти будуть займатися 2 раза на тиждень по 2 заняття підряд.
-                        </p>
-                    </div>
-                </div>
-                <div class="section_advertisement-active_list-item">
-                    <div class="section_advertisement-active_list-item-img">
-                        <img
-                                class="section_advertisement-active_list-item-img_image"
-                                src="../styles/pages/advertisement/section_advertisement-active/images/image_2.webp"
-                                alt="Фото активного оголошення"
-                                loading="lazy">
-                    </div>
-                    <div class="section_advertisement-active_list-item-text">
-                        <h3 class="section_advertisement-active_list-item-text-name">Скласти НМТ не складно</h3>
-                        <p class="section_advertisement-active_list-item-text-description">
-                            и знаєш ти, що скласти НМТ на високий бал цілком реально? 🌟🎯 <br>
-                            Всі секрети успіху в одному місці — ось що тобі потрібно зробити:
-                        </p>
-                    </div>
-                </div>
-                <div class="section_advertisement-active_list-item">
-                    <div class="section_advertisement-active_list-item-img">
-                        <img
-                                class="section_advertisement-active_list-item-img_image"
-                                src="../styles/pages/advertisement/section_advertisement-active/images/image_3.webp"
-                                alt="Фото активного оголошення"
-                                loading="lazy">
-                    </div>
-                    <div class="section_advertisement-active_list-item-text">
-                        <h3 class="section_advertisement-active_list-item-text-name">Експрес-курс "English"</h3>
-                        <p class="section_advertisement-active_list-item-text-description">
-                            Граматичний експрес-курс з англійської мови для 9-11 класів на літніх канікулах
-                        </p>
-                    </div>
+                <div class="section__gallery-item" itemscope itemtype="https://schema.org/ImageObject">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_10.webp"
+                            alt="Учні за партою на уроці"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_11.webp"
+                            alt="Персональна консультація викладача з учнем"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <img
+                            class="section__gallery-image"
+                            src="../styles/pages/gallery/images/images_12.webp"
+                            alt="Школяр уважно слухає вчителя на уроці математики"
+                            loading="lazy"
+                            itemprop="contentUrl">
+                    <meta itemprop="name" content="Персональне навчання">
+                    <meta itemprop="description" content="Індивідуальне заняття учня з репетитором.">
                 </div>
             </div>
+        </div>
+        <div class="section__gallery-container">
+            <button class="section__gallery-container-button visible-tablet">Показати більше</button>
         </div>
     </section>
     <footer class="section container" itemscope itemtype="https://schema.org/Organization">
