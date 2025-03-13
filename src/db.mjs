@@ -27,4 +27,16 @@ export async function getSchedule()
     return rows;
 }
 
+export async function getOurTeachers()
+{
+    const [rows] = await pool.query("SELECT * FROM `our_teachers`");
+    return rows;
+}
+
+export async function getAdvertisement()
+{
+    const [rows] = await pool.query("SELECT * FROM `advertisement`");
+    return rows;
+}
+
 export default pool;
