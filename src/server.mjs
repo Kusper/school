@@ -6,12 +6,16 @@ import { fileURLToPath } from "url";
 import livereload from "livereload";
 import connectLivereload from "connect-livereload";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import * as db from "./db.mjs";
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 3000;
 const allowedPages = ["index", "advertisement", "gallery"];
+
+///////////////////////////////////////
 
 const app = express();
 
@@ -31,6 +35,49 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/html/index.html"));
 });
 
+///////////////////////////////////////
+///           API requests          ///
+///////////////////////////////////////
+
+app.get("/api/gallery", async (req, res) => {
+    try {
+        res.json(await db.getPhotos());
+    }
+    catch (error) {
+        res.status(500).json({ error : error.message });
+    };
+})
+
+app.get("/api/schedule", async (req, res) => {
+    try {
+        res.json(await db.getSchedule());
+    }
+    catch (error) {
+        res.status(500).json({ error : error.message });
+    };
+})
+
+app.get("/api/our_teachers", async (req, res) => {
+    try {
+        res.json(await db.getOurTeachers());
+    }
+    catch (error) {
+        res.status(500).json({ error : error.message });
+    };
+})
+
+app.get("/api/advertisement", async (req, res) => {
+    try {
+        res.json(await db.getAdvertisement());
+    }
+    catch (error) {
+        res.status(500).json({ error : error.message });
+    };
+})
+
+///////////////////////////////////////
+///       Dynamic page routing      ///
+///////////////////////////////////////
 app.get("/:page", (req, res) => {
     const page = req.params.page;
     const filePath = path.join(__dirname, `../public/html/${page}.html`);
