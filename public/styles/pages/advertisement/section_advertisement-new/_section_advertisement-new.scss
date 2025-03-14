@@ -3,6 +3,11 @@
   align-items: center;
   gap: 5rem;
 
+  @include tablet {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   &-img {
     @include tablet{
       margin: 0 auto;

@@ -1370,6 +1370,12 @@ h1 {
   gap: 5rem;
 }
 @media (max-width: 1102px) {
+  .section_advertisement-new {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media (max-width: 1102px) {
   .section_advertisement-new-img {
     margin: 0 auto;
   }
