@@ -642,7 +642,7 @@ h1 {
   margin: 0 auto;
   padding: 0 calc((100vw - 780px) / (1920 - 780) * 111 + 16px);
   box-sizing: border-box;
-  background: var(--color-background-main);
+  background-color: var(--color-background-main);
   border-radius: var(--border-radius);
   padding-block: var(--section-padding-y);
   width: var(--section-width);
