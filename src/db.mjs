@@ -3,40 +3,45 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const pool = mysql.createPool({
+// DB connection 
+const connection = await mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
-    password: "",
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
 });
+
 
 
 export async function getPhotos()
 {
-    const [rows] = await pool.query("SELECT `photo_path` FROM `photo_gallery`");
-    return rows;
-}
-
-export async function getSchedule()
-{
-    const [rows] = await pool.query("SELECT * FROM `schedule`");
-    return rows;
+    try {
+        const [results, fields] = await connection.query("SELECT * FROM `photo_gallery`");
+        return results;
+    } 
+    catch (err) { console.log(err); }
 }
 
 export async function getOurTeachers()
 {
-    const [rows] = await pool.query("SELECT * FROM `our_teachers`");
-    return rows;
+    try {
+        const [results, fields] = await connection.query("SELECT * FROM `our_teachers`");
+        return results;
+    } 
+    catch (err) { console.log(err); }
+}
+
+export async function getSchedule()
+{
+    try {
+        const [results, fields] = await connection.query("SELECT * FROM `schedule`");
+        return results;
+    } catch (err) { console.log(err); }
 }
 
 export async function getAdvertisement()
 {
-    const [rows] = await pool.query("SELECT * FROM `advertisement`");
-    return rows;
+    try {
+        const [results, fields] = await connection.query("SELECT * FROM `advertisement`");
+        return results;
+    } catch (err) { console.log(err); }
 }
-
-export default pool;
