@@ -3,6 +3,7 @@
   max-height: 600px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   &-day {
     padding: 0 4rem;
@@ -33,7 +34,7 @@
       &-day {
         display: flex;
         flex-direction: column;
-        gap: 7rem;
+        gap: 1rem;
       }
 
       &-name {

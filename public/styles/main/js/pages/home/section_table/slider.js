@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function changeSlide(index) {
         slides.forEach((slide, i) => {
-            slide.classList.toggle("active", i === index);
+            slide.classList.toggle("active-teacher-slider", i === index);
         });
         ribbonItems.forEach((item, i) => {
-            item.classList.toggle("active", i === index);
+            item.classList.toggle("active-teacher-slider", i === index);
         });
         updateIndicators(index);
     }
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateIndicators(index) {
         document.querySelectorAll(".indicator").forEach((dot, i) => {
-            dot.classList.toggle("active", i === index);
+            dot.classList.toggle("active-teacher-slider", i === index);
         });
     }
 
