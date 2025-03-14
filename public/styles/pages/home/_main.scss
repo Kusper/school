@@ -1,7 +1,7 @@
 .content {
   @include fluid-container(1920, 780);
 
-  background: var(--color-background-main);
+  background-color: var(--color-background-main);
   border-radius: var(--border-radius);
   padding-block: var(--section-padding-y);
   width: var(--section-width);

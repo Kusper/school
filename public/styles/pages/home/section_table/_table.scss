@@ -1,46 +1,99 @@
-$header-bg-color: #e5f7d7;
-$empty-bg-color: #f9f9f9;
-$border-color: #59C630;
-$subject-bg-colors: (
-        "physics": #ffcccb,
-        "math": #f7dc6f,
-        "ukrainian": #daf7a6,
-        "english": #fbe7c6
-);
-
-.schedule-container {
-  overflow-x: auto;
-  display: flex;
-  border: 2px solid $border-color;
-}
-
 .schedule-container {
   overflow: auto;
-  max-height: 400px;
-  border: 1px solid $border-color;
-}
-
-.schedule {
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  border-collapse: collapse;
-  min-width: 840px;
-  background-color: $empty-bg-color;
 
-  th,
-  td {
-    padding: 10px;
-    border: 1px solid $border-color;
-    text-align: center;
+  &-day {
+    padding: 0 4rem;
+    height: auto;
+    border-radius: 800px 800px 0 0;
+    background: radial-gradient(61.00% 61.00% at 50% 50%,rgb(136, 209, 109) 14.534%,rgb(89, 198, 48) 87.476%);
+    box-shadow: 5px 15px 20px 0 rgba(89, 198, 48, 0.67);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5rem;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
   }
 
-  th {
-    background-color: $header-bg-color;
-    font-weight: bold;
+  &-lessons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+
+    &__card {
+      max-width: 10rem;
+      min-width: 10rem;
+      height: auto;
+      margin: 5px;
+
+      &-day {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      &-name {
+        font-size: 14px;
+      }
+
+      &-time {
+        font-size: 14px;
+      }
+
+      &-button__img {
+        transition: transform 0.3s ease;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+
+      &-description {
+        display: none;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.3s ease, display 0.3s ease;
+      }
+    }
   }
 }
 
-.sticky {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+.math {
+  background-color: var(--color-background-math);
+}
+
+.physics {
+  background-color: var(--color-background-physics);
+}
+
+.chemistry {
+  background-color: var(--color-background-chemistry);
+}
+
+.literature {
+  background-color: var(--color-background-literature);
+}
+
+.history {
+  background-color: var(--color-background-history);
+}
+
+.geography {
+  background-color: var(--color-background-geography);
+}
+
+.music {
+  background-color: var(--color-background-music);
+}
+
+.foreign-language {
+  background-color: var(--color-background-foreign-language);
+}
+
+.math, .physics, .chemistry, .literature, .history, .geography, .computer-science, .music, .foreign-language {
+  border-radius: 30px;
+  padding: 10px;
 }

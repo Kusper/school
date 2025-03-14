@@ -1,3 +1,4 @@
+//Global
 @import "main/normalize",
 "main/fonts",
 "main/mixins",
@@ -6,7 +7,7 @@
 "main/utils",
 "main/globals";
 
-//Головна
+//Home
 @import 'pages/home/header/burger-button',
 'pages/home/header/header',
 'pages/home/header/cross-button',
@@ -19,4 +20,12 @@
 'pages/home/section_teacher/teacher',
 'pages/home/section_contact/contact';
 
-//Оголошення
+//Advertisement
+@import 'pages/advertisement/section_advertisement-new/section_advertisement-new',
+'pages/advertisement/section_advertisement-active/section_advertisement-active';
+
+//Gallery
+@import "pages/gallery/gallery";
+
+//About us
+@import "pages/about_us/section-values";

@@ -4,54 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="robots" content="index, follow">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Познайомтесь з нашими досвідченими викладачами, які допоможуть вам успішно підготуватися до екзаменів.">
     <link rel="stylesheet" href="../styles/style.css">
     <title>Всезнайка - Освітній центр</title>
 </head>
 <body>
-<header class="header">
+<header class="header" itemscope itemtype="https://schema.org/Organization">
     <div class="header__inner container">
-        <a class="header__logo logo" href="/">
+        <a class="header__logo logo" href="/" itemprop="url">
             <img
                     class="logo__images"
-                    src="../images/logo.svg"
+                    src="../images/home/logo.svg"
                     alt="Всезнайка - найкращі з найкращих"
-                    loading="lazy">
+                    loading="lazy"
+                    itemprop="logo" />
         </a>
-        <nav class="header__menu hidden-mobile">
+        <nav class="header__menu hidden-mobile" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <ul class="header__menu-list">
                 <li class="header__menu-item">
-                    <a class="header__menu-link" href="/advertisement">Оголошення</a>
+                    <a class="header__menu-link" href="/advertisement" itemprop="url">Оголошення</a>
                 </li>
                 <li class="header__menu-item">
-                    <a class="header__menu-link" href="/">Фото галерея</a>
+                    <a class="header__menu-link" href="/gallery" itemprop="url">Фотогалерея</a>
                 </li>
                 <li class="header__menu-item">
-                    <a class="header__menu-link" href="/">Наші викладачі</a>
+                    <a class="header__menu-link" href="/our_teachers" itemprop="url">Наші викладачі</a>
                 </li>
                 <li class="header__menu-item">
-                    <a class="header__menu-link" href="/">Про нас</a>
+                    <a class="header__menu-link" href="/about_us" itemprop="url">Про нас</a>
                 </li>
                 <li class="header__menu-item">
-                    <a class="header__menu-link" href="/">Вхід
+                    <a class="header__menu-link" href="/" itemprop="url">Вхід
                         <img
                                 class="header__menu-link-img"
-                                src="../images/account.svg"
+                                src="../images/home/account.svg"
                                 alt="Вхід в аккаунт"
-                                width="20" height="20" loading="lazy">
+                                width="20"
+                                height="20"
+                                loading="lazy">
                     </a>
                 </li>
             </ul>
         </nav>
-        <div class="header__phone-number hidden-mobile">
+        <div class="header__phone-number hidden-mobile" itemscope itemtype="https://schema.org/ContactPoint">
             <div class="header__phone-number-icon">
                 <img
                         class="phone__icon"
-                        src="../images/phone.svg"
+                        src="../images/home/phone.svg"
                         alt="Номер телефона"
-                        loading="lazy">
+                        loading="lazy"
+                        itemprop="contactType" />
             </div>
-            <span class="header__phone-number__text">099 683 4331</span>
+            <span class="header__phone-number__text" itemprop="telephone">099 683 4331</span>
         </div>
         <button
                 class="button__burger-menu burger-button visible-mobile"
@@ -61,10 +67,9 @@
         </button>
     </div>
 </header>
-
 <main class="content">
     <section class="section container">
-        <div class="section__body">
+        <div class="section__body" itemscope itemtype="https://schema.org/WebPage">
             <div class="hero">
                 <div class="hero__main">
                     <div class="hero__shape-orange hidden-mobile"></div>
@@ -73,7 +78,7 @@
                     <div class="hero__body">
                         <div class="hero__message hidden-mobile">
                             <img class="hero__message-image"
-                                 src="../images/hero_message.svg"
+                                 src="../images/home/hero_message.svg"
                                  alt=""
                                  loading="lazy">
                         </div>
@@ -89,37 +94,37 @@
                     <div class="hero__container-image">
                         <img
                                 class="hero__image"
-                                src="../images/hero_bg.svg"
+                                src="../images/home/hero_bg.svg"
                                 alt="Коментар від викладача"
                                 loading="lazy">
                     </div>
                 </div>
-                <div class="hero__static">
+                <div class="hero__static" itemscope itemtype="https://schema.org/Organization">
                     <div class="hero__static-container">
                         <h2 class="visually-hidden">Наша статистика</h2>
                         <ul class="hero__static-list">
-                            <li class="hero__static-item"><span class="hero__static-number">8</span></li>
+                            <li class="hero__static-item"><span class="hero__static-number" itemprop="foundingDate" datetime="2025-03-08">8</span></li>
                             <li class="hero__static-item-line"></li>
-                            <li class="hero__static-item">років успішної <br> роботи</li>
-                            <li class="hero__static-item"><span class="hero__static-number">1000+</span></li>
+                            <li class="hero__static-item" itemprop="description">років успішної <br> роботи</li>
+                            <li class="hero__static-item" itemprop="numberOfEmployees"><span class="hero__static-number">1000+</span></li>
                             <li class="hero__static-item-line"></li>
-                            <li class="hero__static-item">Понад 1000 <br> випускників</li>
+                            <li class="hero__static-item" itemprop="name">Понад 1000 <br> випускників</li>
                             <li class="hero__static-item"><span class="hero__static-number">7</span></li>
                             <li class="hero__static-item-line"></li>
-                            <li class="hero__static-item">Школа працює 7 <br> днів на тиждень</li>
+                            <li class="hero__static-item" itemprop="description">Школа працює 7 <br> днів на тиждень</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section container">
+    <section class="section container" itemscope itemtype="https://schema.org/Organization">
         <header class="section__header">
             <h2 class="section__header">Школа
-                <span class="section__header-color">"Всезнайка"</span>
+                <span class="section__header-color" itemprop="name">"Всезнайка"</span>
             </h2>
             <div class="section__header-description">
-                <p>Місія нашої школи полягає в тому, щоб відкрити двері у світ знань з будь-яких предметів,
+                <p itemprop="description">Місія нашої школи полягає в тому, щоб відкрити двері у світ знань з будь-яких предметів,
                     подарувати свободу спілкування в будь-якій країні та дати можливість безперешкодно черпати
                     знання з раніше недоступних джерел інформації.
                 </p>
@@ -131,279 +136,188 @@
             <div class="section__header__shape-orange"></div>
         </header>
         <div class="section__body-container">
-            <!--               <div class="section__body-container">-->
-            <!--                    <div class="section__body-container-video">-->
-            <!--                        <video controls class="section__body-container-video__video">-->
-            <!--                            <source src="./video/" type="video/mp4">-->
-            <!--                        </video>-->
-            <!--                    </div>-->
-            <!--                   <div class="section__body__shape-green"></div>-->
-            <!--               </div>-->
+            <div class="section__body-container">
+                <div class="section__body-container-video">
+                    <video controls class="section__body-container-video__video">
+                        <source
+                                src="../video/about_as.mp4"
+                                type="video/mp4">
+                    </video>
+                </div>
+                <div class="section__body__shape-green"></div>
+            </div>
         </div>
     </section>
     <section class="section container">
         <header class="section__header">
             <h2 class="section__header">Наш
-                <span class="section__header-color">календар уроків</span>
+                <span class="section__header-color" itemprop="name">календар уроків</span>
             </h2>
         </header>
-        <div class="schedule-container">
-            <table class="schedule">
-                <thead class="sticky">
-                <tr>
-                    <th></th>
-                    <th>Понеділок, </th>
-                    <th>Вівторок, </th>
-                    <th>Середа, </th>
-                    <th>Четверг, </th>
-                    <th>Пʼятниця, </th>
-                    <th>Субота, </th>
-                    <th>Неділя, </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>7:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>7:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>8:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>8:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>9:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>9:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>10:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>10:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>11:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>11:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>12:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>12:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>13:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>13:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>14:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>14:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>15:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>15:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>16:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>16:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>17:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>17:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>18:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>18:30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
+        <div class="schedule-container" itemscope itemtype="https://schema.org/Event">
+            <meta itemprop="eventStatus" content="EventScheduled"/>
+            <meta itemprop="startDate" content="2025-03-07T07:30:00+03:00"/>
+            <meta itemprop="location" content="Суми, Україна"/>
+            <div class="schedule-container-day">
+                <div class="schedule-container-day__day"><h3 itemprop="eventSchedule">Понеділок</h3></div>
+                <div class="schedule-container-day__day"><h3 itemprop="eventSchedule">Вівторок</h3></div>
+                <div class="schedule-container-day__day"><h3 itemprop="eventSchedule">Середа</h3></div>
+                <div class="schedule-container-day__day"><h3 itemprop="eventSchedule">Четвер</h3></div>
+                <div class="schedule-container-day__day"><h3 itemprop="eventSchedule">П'ятниця</h3></div>
+                <div class="schedule-container-day__day"><h3 itemprop="eventSchedule">Суббота</h3></div>
+                <div class="schedule-container-day__day"><h3 itemprop="eventSchedule">Неділя</h3></div>
+            </div>
+            <div class="schedule-container-lessons">
+                <div class="schedule-container-lessons__card-day" itemscope itemtype="https://schema.org/CreativeWork">
+                    <div class="schedule-container-lessons__card math">
+                        <div class="schedule-container-lessons__card-name"><h2 itemprop="name">Математика</h2></div>
+                        <div class="schedule-container-lessons__card-time"><h2 itemprop="duration">7:30 - 8:30</h2></div>
+                        <div class="schedule-container-lessons__card-button">
+                            <img
+                                 class="schedule-container-lessons__card-button__img"
+                                 src="../images/home/pointer.svg"
+                                 alt="Додаткова інформація щодо уроку"
+                                 loading="lazy">
+                        </div>
+                        <div class="schedule-container-lessons__card-description">
+                            <h3 itemprop="teacher">Викладач:</h3>
+                            <h3 itemprop="about">Тема:</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-container-lessons__card foreign-language">
+                        <div class="schedule-container-lessons__card-name"><h2 itemprop="name">Англійська мова</h2></div>
+                        <div class="schedule-container-lessons__card-time"><h2 itemprop="duration">7:30 - 8:30</h2></div>
+                        <div class="schedule-container-lessons__card-button">
+                            <img
+                                    class="schedule-container-lessons__card-button__img"
+                                    src="../images/home/pointer.svg"
+                                    alt="Додаткова інформація щодо уроку"
+                                    loading="lazy">
+                        </div>
+                        <div class="schedule-container-lessons__card-description">
+                            <h3 itemprop="teacher">Викладач:</h3>
+                            <h3 itemprop="about">Тема:</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-container-lessons__card-day">
+                    <div class="schedule-container-lessons__card physics">
+                        <div class="schedule-container-lessons__card-name"><h2 itemprop="name">Фізика</h2></div>
+                        <div class="schedule-container-lessons__card-time"><h2 itemprop="duration">7:30 - 8:30</h2></div>
+                        <div class="schedule-container-lessons__card-button">
+                            <img
+                                    class="schedule-container-lessons__card-button__img"
+                                    src="../images/home/pointer.svg"
+                                    alt="Додаткова інформація щодо уроку"
+                                    loading="lazy">
+                        </div>
+                        <div class="schedule-container-lessons__card-description">
+                            <h3 itemprop="teacher">Викладач:</h3>
+                            <h3 itemprop="about">Тема:</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-container-lessons__card-day">
+                    <div class="schedule-container-lessons__card chemistry">
+                        <div class="schedule-container-lessons__card-name"><h2 itemprop="name">Хімія</h2></div>
+                        <div class="schedule-container-lessons__card-time"><h2 itemprop="duration">7:30 - 8:30</h2></div>
+                        <div class="schedule-container-lessons__card-button">
+                            <img
+                                    class="schedule-container-lessons__card-button__img"
+                                    src="../images/home/pointer.svg"
+                                    alt="Додаткова інформація щодо уроку"
+                                    loading="lazy">
+                        </div>
+                        <div class="schedule-container-lessons__card-description">
+                            <h3 itemprop="teacher">Викладач:</h3>
+                            <h3 itemprop="about">Тема:</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-container-lessons__card-day">
+                    <div class="schedule-container-lessons__card literature">
+                        <div class="schedule-container-lessons__card-name"><h2 itemprop="name">Література</h2></div>
+                        <div class="schedule-container-lessons__card-time"><h2 itemprop="duration">7:30 - 8:30</h2></div>
+                        <div class="schedule-container-lessons__card-button">
+                            <img
+                                    class="schedule-container-lessons__card-button__img"
+                                    src="../images/home/pointer.svg"
+                                    alt="Додаткова інформація щодо уроку"
+                                    loading="lazy">
+                        </div>
+                        <div class="schedule-container-lessons__card-description">
+                            <h3 itemprop="teacher">Викладач:</h3>
+                            <h3 itemprop="about">Тема:</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-container-lessons__card-day">
+                    <div class="schedule-container-lessons__card history">
+                        <div class="schedule-container-lessons__card-name"><h2 itemprop="name">Історія</h2></div>
+                        <div class="schedule-container-lessons__card-time"><h2 itemprop="duration">7:30 - 8:30</h2></div>
+                        <div class="schedule-container-lessons__card-button">
+                            <img
+                                    class="schedule-container-lessons__card-button__img"
+                                    src="../images/home/pointer.svg"
+                                    alt="Додаткова інформація щодо уроку"
+                                    loading="lazy">
+                        </div>
+                        <div class="schedule-container-lessons__card-description">
+                            <h3 itemprop="teacher">Викладач:</h3>
+                            <h3 itemprop="about">Тема:</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-container-lessons__card-day">
+                    <div class="schedule-container-lessons__card geography">
+                        <div class="schedule-container-lessons__card-name"><h2 itemprop="name">Географія</h2></div>
+                        <div class="schedule-container-lessons__card-time"><h2 itemprop="duration">7:30 - 8:30</h2></div>
+                        <div class="schedule-container-lessons__card-button">
+                            <img
+                                    class="schedule-container-lessons__card-button__img"
+                                    src="../images/home/pointer.svg"
+                                    alt="Додаткова інформація щодо уроку"
+                                    loading="lazy">
+                        </div>
+                        <div class="schedule-container-lessons__card-description">
+                            <h3 itemprop="teacher">Викладач: Іван Іваненко Іванович</h3>
+                            <h3 itemprop="about">Тема:</h3>
+                        </div>
+                    </div>
+                    <div class="schedule-container-lessons__card foreign-language">
+                        <div class="schedule-container-lessons__card-name"><h2 itemprop="name">Англійська мова</h2></div>
+                        <div class="schedule-container-lessons__card-time"><h2 itemprop="duration">7:30 - 8:30</h2></div>
+                        <div class="schedule-container-lessons__card-button">
+                            <img
+                                    class="schedule-container-lessons__card-button__img"
+                                    src="../images/home/pointer.svg"
+                                    alt="Додаткова інформація щодо уроку"
+                                    loading="lazy">
+                        </div>
+                        <div class="schedule-container-lessons__card-description">
+                            <h3 itemprop="teacher">Викладач:</h3>
+                            <h3 itemprop="about">Тема:</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule-container-lessons__card-day">
+                    <div class="schedule-container-lessons__card music">
+                        <div class="schedule-container-lessons__card-name"><h2 itemprop="name">Музика</h2></div>
+                        <div class="schedule-container-lessons__card-time"><h2 itemprop="duration">7:30 - 8:30</h2></div>
+                        <div class="schedule-container-lessons__card-button">
+                            <img
+                                    class="schedule-container-lessons__card-button__img"
+                                    src="../images/home/pointer.svg"
+                                    alt="Додаткова інформація щодо уроку"
+                                    loading="lazy">
+                        </div>
+                        <div class="schedule-container-lessons__card-description">
+                            <h3 itemprop="teacher">Викладач:</h3>
+                            <h3 itemprop="about">Тема:</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="section container">
@@ -417,90 +331,124 @@
                 <div class="section__advantages-item">
                     <img
                             class="section__advantages-item-img"
-                            src="../styles/pages/home/section_advantages/images/advantages_f.svg"
+                            src="../images/home/advantages_f.svg"
                             alt="Безкоштовна консультація для новачків"
                             loading="lazy">
                 </div>
                 <div class="section__advantages-item">
                     <img
                             class="section__advantages-item-img"
-                            src="../styles/pages/home/section_advantages/images/advantages_s.svg"
+                            src="../images/home/advantages_s.svg"
                             alt="Найкращі викладачі міста"
                             loading="lazy">
                 </div>
                 <div class="section__advantages-item">
                     <img
                             class="section__advantages-item-img"
-                            src="../styles/pages/home/section_advantages/images/advantages_t.svg"
+                            src="../images/home/advantages_t.svg"
                             alt="Завжди на зв'язку"
                             loading="lazy">
                 </div>
             </div>
         </div>
     </section>
-    <section class="section container">
+    <section class="section container" itemscope itemtype="https://schema.org/Person">
         <header class="section__header">
             <h2 class="section__header right">Наші
                 <span class="section__header-color">викладачі</span>
             </h2>
         </header>
         <div class="section_teacher-container">
-            <div class="section_teacher-item">
-                <img
-                        class="section_teacher-item-img teacher-img"
-                        src="../styles/pages/home/section_teacher/images/teacher.svg"
-                        alt="Фото викладача"
-                        loading="lazy">
+            <button class="slide-arrow prev-arrow visible-tablet" aria-label="Попередній викладач">←</button>
+            <div class="section_teacher-slide active-teacher-slider" itemscope itemtype="https://schema.org/Person">
+                <div class="section_teacher-item active-teacher-slider">
+                    <img
+                            class="section_teacher-item-img teacher-img"
+                            src="../images/home/teacher/teacher_1.svg"
+                            alt="Фото викладача"
+                            loading="lazy">
+                </div>
+                <div class="section_teacher-item active-teacher-slider hidden-tablet">
+                    <img
+                            class="section_teacher-item-img"
+                            src="../images/home/teacher/background_description-desktop_1.svg"
+                            alt="Характеристика викладача"
+                            loading="lazy">
+                </div>
             </div>
-            <div class="section_teacher-item hidden-tablet">
-                <img
-                        class="section_teacher-item-img"
-                        src="../styles/pages/home/section_teacher/images/background_description-desktop.svg"
-                        alt="Характеристика викладача"
-                        loading="lazy">
+            <div class="section_teacher-slide active-teacher-slider" itemscope itemtype="https://schema.org/Person">
+                <div class="section_teacher-item active-teacher-slider">
+                    <img
+                            class="section_teacher-item-img teacher-img"
+                            src="../images/home/teacher/teacher_2.svg"
+                            alt="Фото викладача"
+                            loading="lazy">
+                </div>
+                <div class="section_teacher-item active hidden-tablet">
+                    <img
+                            class="section_teacher-item-img"
+                            src="../images/home/teacher/background_description-desktop_2.svg"
+                            alt="Характеристика викладача"
+                            loading="lazy">
+                </div>
             </div>
-            <div class="section_teacher-item visible-tablet">
-                <img
-                        class="section_teacher-item-img"
-                        src="../styles/pages/home/section_teacher/images/background_description-tablet.svg"
-                        alt="Характеристика викладача"
-                        loading="lazy">
+            <div class="section_teacher-slide active-teacher-slider" itemscope itemtype="https://schema.org/Person">
+                <div class="section_teacher-item active-teacher-slider">
+                    <img
+                            class="section_teacher-item-img teacher-img"
+                            src="../images/home/teacher/teacher_3.svg"
+                            alt="Фото викладача"
+                            loading="lazy">
+                </div>
+                <div class="section_teacher-item active-teacher-slider hidden-tablet">
+                    <img
+                            class="section_teacher-item-img"
+                            src="../images/home/teacher/background_description-desktop_3.svg"
+                            alt="Характеристика викладача"
+                            loading="lazy">
+                </div>
             </div>
+            <button class="slide-arrow next-arrow visible-tablet" aria-label="Наступний викладач">→</button>
         </div>
-        <div class="section_teacher-ribbon">
-            <div class="section_teacher-ribbon-item hidden-tablet">
+        <div class="section_teacher-ribbon" role="list">
+            <div class="section_teacher-ribbon-item active-teacher-slider hidden-tablet" itemscope itemtype="https://schema.org/Person">
                 <figure class="section_teacher-ribbon-container">
                     <img
                             class="section_teacher-item-img teacher-ribbon"
-                            src="../styles/pages/home/section_teacher/images/ribbon_teacher-f.svg"
+                            src="../images/our_teachers/ribbon_teacher-f_1.svg"
                             alt="Олена Валеріївна"
                             loading="lazy">
                     <figcaption class="section_teacher-item-ribbon-text">Олена Валеріївна</figcaption>
                 </figure>
             </div>
-            <div class="section_teacher-ribbon-item hidden-tablet">
+            <div class="section_teacher-ribbon-item active-teacher-slider hidden-tablet" itemscope itemtype="https://schema.org/Person">
                 <figure class="section_teacher-ribbon-container">
                     <img
                             class="section_teacher-item-img teacher-ribbon"
-                            src="../styles/pages/home/section_teacher/images/ribbon_teacher-f.svg"
+                            src="../images/our_teachers/ribbon_teacher-f_2.svg"
                             alt=""
                             loading="lazy">
-                    <figcaption class="section_teacher-item-ribbon-text">Олена Валеріївна</figcaption>
+                    <figcaption class="section_teacher-item-ribbon-text">Світлана Миколаївна</figcaption>
                 </figure>
             </div>
-            <div class="section_teacher-ribbon-item hidden-tablet">
+            <div class="section_teacher-ribbon-item active-teacher-slider hidden-tablet" itemscope itemtype="https://schema.org/Person">
                 <figure class="section_teacher-ribbon-container">
                     <img
                             class="section_teacher-item-img teacher-ribbon"
-                            src="../styles/pages/home/section_teacher/images/ribbon_teacher-f.svg"
+                            src="../images/our_teachers/ribbon_teacher-f_3.svg"
                             alt=""
                             loading="lazy">
-                    <figcaption class="section_teacher-item-ribbon-text">Олена Валеріївна</figcaption>
+                    <figcaption class="section_teacher-item-ribbon-text">Євген Івнович</figcaption>
                 </figure>
+            </div>
+            <div class="section_teacher-indicators visible-tablet">
+                <span class="indicator active-teacher-slider" aria-label="Індикатор першого викладача"></span>
+                <span class="indicator" aria-label="Індикатор другого викладача"></span>
+                <span class="indicator" aria-label="Індикатор третього викладача"></span>
             </div>
         </div>
     </section>
-    <footer class="section container">
+    <footer class="section container" itemscope itemtype="https://schema.org/Organization">
         <header class="section__header ">
             <h2 class="section__header">Контакти</h2>
         </header>
@@ -512,7 +460,10 @@
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2515.3216023313453!2d34.7998332!3d50.9177676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4129022f64095555%3A0x836d42cd782972c9!2z0JLRgdC10LfQvdCw0LnQutCw!5e0!3m2!1sru!2sua!4v1739012943534!5m2!1sru!2sua"
                             width="600"
                             height="450"
-                            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
 
                     </iframe>
                 </div>
@@ -521,36 +472,42 @@
                         <div class="section_contact-text-description-container">
                             <img
                                     class="section_contact-text-description-img"
-                                    src="../styles/pages/home/section_contact/images/number__phone.svg"
+                                    src="../images/home/number__phone.svg"
                                     alt="Номер телефону"
                                     loading="lazy">
-                            <h3>099 683 4331</h3>
+                            <h3 itemprop="telephone">099 683 4331</h3>
                         </div>
                         <div class="section_contact-text-description-container">
                             <img
                                     class="section_contact-text-description-img"
-                                    src="../styles/pages/home/section_contact/images/map__icon.svg"
+                                    src="../images/home/map__icon.svg"
                                     alt="Адреса офісу"
                                     loading="lazy">
-                            <h3>вул. Британська, 26, 3пов, офіс 2</h3>
+                            <h3 itemscope itemtype="https://schema.org/PostalAddress">
+                                <span itemprop="streetAddress">вул. Британська, 26, 3пов, офіс 2</span><br>
+                                <span itemprop="addressLocality">Суми</span>
+                                <span itemprop="postalCode">40000</span>
+                                <span itemprop="addressCountry">Україна</span>
+                            </h3>
                         </div>
                         <div class="section_contact-text-description-container">
                             <img
                                     class="section_contact-text-description-img"
-                                    src="../styles/pages/home/section_contact/images/time__icon.svg"
+                                    src="../images/home/time__icon.svg"
                                     alt="Години"
                                     loading="lazy">
-                            <h3>з ПН-ПТ з 9:00 до 17:00</h3>
+                            <h3 itemprop="openingHours" >з ПН-ПТ з 9:00 до 17:00</h3>
                         </div>
                     </div>
                     <div class="section_contact-text-sociable">
                         <div class="section_contact-sociable-item">
                             <a
                                     href="https://www.instagram.com/repetitor_in_sumy/"
-                                    target="_blank">
+                                    target="_blank"
+                                    itemprop="sameAs">
                                 <img
                                         class="section_contact-sociable-item-img"
-                                        src="../styles/pages/home/section_contact/images/instagram__icon.svg"
+                                        src="../images/home/instagram__icon.svg"
                                         alt="instagram"
                                         loading="lazy">
                             </a>
@@ -558,10 +515,11 @@
                         <div class="section_contact-sociable-item">
                             <a
                                     href="https://www.facebook.com/p/%D0%A6%D0%B5%D0%BD%D1%82%D1%80-%D1%80%D0%B5%D0%BF%D0%B5%D1%82%D0%B8%D1%82%D0%BE%D1%80%D0%BE%D0%B2-%D0%92%D1%81%D0%B5%D0%B7%D0%BD%D0%B0%D0%B9%D0%BA%D0%B0-100063481153383/"
-                                    target="_blank">
+                                    target="_blank"
+                                    itemprop="sameAs">
                                 <img
                                         class="section_contact-sociable-item-img"
-                                        src="../styles/pages/home/section_contact/images/facebook__icon.svg"
+                                        src="../images/home/facebook__icon.svg"
                                         alt="facebook"
                                         loading="lazy">
                             </a>
@@ -569,10 +527,11 @@
                         <div class="section_contact-sociable-item">
                             <a
                                     href=""
-                                    target="_blank">
+                                    target="_blank"
+                                    itemprop="sameAs">
                                 <img
                                         class="section_contact-sociable-item-img"
-                                        src="../styles/pages/home/section_contact/images/telegram__icon.svg"
+                                        src="../images/home/telegram__icon.svg"
                                         alt="telegram"
                                         loading="lazy">
                             </a>
@@ -583,12 +542,12 @@
         </div>
     </footer>
 </main>
-
-<dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+<dialog class="mobile-overlay visible-mobile" id="mobileOverlay" aria-labelledby="mobileOverlayTitle" aria-hidden="true">
     <form class="mobile-overlay__close-button-wrapper" method="dialog">
         <button
                 class="mobile-overlay__close-button cross-button"
-                type="submit">
+                type="submit"
+                aria-label="Закрити меню">
             <span class="visually-hidden">Закрити меню</span>
         </button>
     </form>
@@ -610,7 +569,7 @@
                 <a class="mobile-overlay__link-icon" href="/">Вхід
                     <img
                             class="mobile-overlay__img"
-                            src="../images/account.svg"
+                            src="../images/home/account.svg"
                             alt="Вхід в аккаунт"
                             loading="lazy">
                 </a>
@@ -620,4 +579,5 @@
 </dialog>
 <script src="../js/schedule.js"></script>
 </body>
+<script src="/styles/main/js/main.js" type="module"></script>
 </html>
