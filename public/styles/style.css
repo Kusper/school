@@ -1462,4 +1462,37 @@ h1 {
   background-color: #ff4500;
 }
 
+.section__values {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.section__values-list {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 767px) {
+  .section__values-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+.section__values-list-item {
+  border-radius: 80px;
+  box-shadow: 0px 4px 35px 0px rgba(26, 26, 26, 0.38);
+}
+.section__values-list-item_text {
+  padding: 1rem;
+}
+@media (max-width: 1102px) {
+  .section__values-list-item_text {
+    padding: 0.5rem;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
