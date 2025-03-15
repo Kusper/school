@@ -95,5 +95,5 @@ app.get("/:page", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`[server.mjs] Running on http://localhost:${PORT}`);
+    console.log(`[server.mjs] Running on http://localhost:${PORT}]\n`);
 });
