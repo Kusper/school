@@ -1,11 +1,10 @@
 # Default ignored files
-/shelf/
+/.idea/shelf/
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
 # Node.js dependencies
 ../node_modules
-../package-lock.json
 # Logs
 logs/
 *.log

@@ -308,30 +308,31 @@
         </div>
     </footer>
 </main>
-<dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+<dialog class="mobile-overlay visible-mobile" id="mobileOverlay" aria-labelledby="mobileOverlayTitle" aria-hidden="true">
     <form class="mobile-overlay__close-button-wrapper" method="dialog">
         <button
                 class="mobile-overlay__close-button cross-button"
-                type="submit">
+                type="submit"
+                aria-label="Закрити меню">
             <span class="visually-hidden">Закрити меню</span>
         </button>
     </form>
     <div class="mobile-overlay__body">
         <ul class="mobile-overlay__list">
             <li class="mobile-overlay__item">
-                <a class="mobile-overlay__link" href="/public">Оголошення</a>
+                <a class="mobile-overlay__link" href="/">Оголошення</a>
             </li>
             <li class="mobile-overlay__item">
-                <a class="mobile-overlay__link" href="/public">Фото галерея</a>
+                <a class="mobile-overlay__link" href="/">Фото галерея</a>
             </li>
             <li class="mobile-overlay__item">
-                <a class="mobile-overlay__link" href="/public">Наші викладачі</a>
+                <a class="mobile-overlay__link" href="/">Наші викладачі</a>
             </li>
             <li class="mobile-overlay__item">
-                <a class="mobile-overlay__link" href="/public">Про нас</a>
+                <a class="mobile-overlay__link" href="/">Про нас</a>
             </li>
             <li class="mobile-overlay__item">
-                <a class="mobile-overlay__link-icon" href="/public">Вхід
+                <a class="mobile-overlay__link-icon" href="/">Вхід
                     <img
                             class="mobile-overlay__img"
                             src="../images/home/account.svg"
