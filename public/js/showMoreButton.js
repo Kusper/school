@@ -1,6 +1,6 @@
 const button = document.querySelector(".section__gallery-container-button");
 let offset = 0;
-const limit = 4;
+const limit = 12;
 let totalPhotos = 0;
 
 async function loadPhotos() {
@@ -14,7 +14,7 @@ async function loadPhotos() {
             button.style.display = "none";
             return;
         }
-        
+
         totalPhotos = data.totalPhotos;
 
         const galleryItems = document.querySelectorAll(".section__gallery-item");
