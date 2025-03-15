@@ -28,8 +28,11 @@ export async function getPhotos(limit, offset)
 {
     try {
         const [results, fields] = await connection.query("SELECT * FROM `photo_gallery` LIMIT ? OFFSET ?", [limit, offset]);
-        // console.log("SELECT * FROM `photo_gallery` LIMIT ? OFFSET ?", [limit, offset]);
-        return results;
+        const [rows] = await connection.query("SELECT COUNT(*) AS `total` FROM `photo_gallery`");
+        const totalPhotos = rows[0]?.total ?? 0; 
+        //console.log(`RESULTS = ${results[0].photo_path}   |   TOTALPHOTOS = ${rows[0].total}`);
+        // RESULTS = images/photo_gallery/images_2.webp   |   TOTALPHOTOS = 12
+        return {results, totalPhotos};
     } 
     catch (error) { console.log(error); }
 }

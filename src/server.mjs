@@ -44,8 +44,6 @@ app.get("/api/gallery", async (req, res) => {
         const offset = parseInt(req.query.offset) || 0;
         const limit = parseInt(req.query.limit) || 4;
 
-        // console.log(`${limit}   |   ${offset}`)
-
         res.json(await db.getPhotos(limit, offset));
     }
     catch (error) {
@@ -95,5 +93,5 @@ app.get("/:page", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`[server.mjs] Running on http://localhost:${PORT}]\n`);
+    console.log(`[server.mjs] Running on http://localhost:${PORT}\n`);
 });
