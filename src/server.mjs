@@ -41,7 +41,12 @@ app.get("/", (req, res) => {
 
 app.get("/api/gallery", async (req, res) => {
     try {
-        res.json(await db.getPhotos());
+        const offset = parseInt(req.query.offset) || 0;
+        const limit = parseInt(req.query.limit) || 4;
+
+        // console.log(`${limit}   |   ${offset}`)
+
+        res.json(await db.getPhotos(limit, offset));
     }
     catch (error) {
         res.status(500).json({ error : error.message });
@@ -90,5 +95,5 @@ app.get("/:page", (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Running on http://localhost:${PORT}`);
+    console.log(`[server.mjs] Running on http://localhost:${PORT}`);
 });
