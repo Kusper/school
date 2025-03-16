@@ -9,7 +9,7 @@ async function loadPhotos() {
         const data = await response.json();
         //console.log(`\n[button.js] totalPhotos = ${data.totalPhotos}\n`)
 
-        // Check for data existance
+        // Check data existance
         if( data.results.length === 0 || offset >= data.totalPhotos){
             button.style.display = "none";
             return;
@@ -33,7 +33,7 @@ async function loadPhotos() {
         if( offset >= totalPhotos)
             button.style.display = "none";
     }
-    catch(error) { console.error("Error fetching gallery:", error) }
+    catch(error) { console.error("[fetchSchedule.js] Error fetching gallery:", error) }
     
 }
 
