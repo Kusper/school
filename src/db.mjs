@@ -3,40 +3,61 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: "",
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
-});
+async function connectToDB() {
+    try{
+        const conn = await mysql.createConnection({
+            host: process.env.DB_HOST,
+            user: process.env.DB_USER,
+            database: process.env.DB_NAME,
+        });
 
-
-export async function getPhotos()
-{
-    const [rows] = await pool.query("SELECT `photo_path` FROM `photo_gallery`");
-    return rows;
+        console.log("[db.mjs] Connected to DB successfully")
+        return conn;
+    }
+    catch (error){
+        console.error("[db.mjs] Failed connection to DB:", error);
+        throw error;
+    }
 }
 
-export async function getSchedule()
+const connection = await connectToDB();
+
+///////////////////////////////////////////
+
+export async function getPhotos(limit, offset)
 {
-    const [rows] = await pool.query("SELECT * FROM `schedule`");
-    return rows;
+    try {
+        const [results, fields] = await connection.query("SELECT * FROM `photo_gallery` LIMIT ? OFFSET ?", [limit, offset]);
+        const [rows] = await connection.query("SELECT COUNT(*) AS `total` FROM `photo_gallery`");
+        const totalPhotos = rows[0]?.total ?? 0; 
+        //console.log(`RESULTS = ${results[0].photo_path}   |   TOTALPHOTOS = ${rows[0].total}`);
+        // RESULTS = images/photo_gallery/images_2.webp   |   TOTALPHOTOS = 12
+        return {results, totalPhotos};
+    } 
+    catch (error) { console.log(error); }
 }
 
 export async function getOurTeachers()
 {
-    const [rows] = await pool.query("SELECT * FROM `our_teachers`");
-    return rows;
+    try {
+        const [results, fields] = await connection.query("SELECT * FROM `our_teachers`");
+        return results;
+    } 
+    catch (error) { console.log(error); }
+}
+
+export async function getSchedule()
+{
+    try {
+        const [results, fields] = await connection.query("SELECT * FROM `schedule`");
+        return results;
+    } catch (error) { console.log(error); }
 }
 
 export async function getAdvertisement()
 {
-    const [rows] = await pool.query("SELECT * FROM `advertisement`");
-    return rows;
+    try {
+        const [results, fields] = await connection.query("SELECT * FROM `advertisement`");
+        return results;
+    } catch (error) { console.log(error); }
 }
-
-export default pool;
