@@ -232,15 +232,15 @@ svg * {
                 circle,
                 rgb(136, 209, 109),
                 rgb(89, 198, 48));
-  --color-background-math: #83b0e4;
-  --color-background-physics: #97dfba;
-  --color-background-chemistry: #c78fdd;
-  --color-background-literature: #f1b48b;
-  --color-background-history: #e28379;
-  --color-background-geography: #8bd188;
-  --color-background-ukrainian-language: #b9ade2;
-  --color-background-biology: #e491b8;
-  --color-background-foreign-language: #ebd57e;
+  --color-background-math: #4A90E2;
+  --color-background-physics: #50E3C2;
+  --color-background-chemistry: #9B59B6;
+  --color-background-literature: #F39C12;
+  --color-background-history: #E74C3C;
+  --color-background-geography: #378f7d;
+  --color-background-ukrainian-language: #93acbd;
+  --color-background-biology: #d1f382;
+  --color-background-foreign-language: #F1C40F;
   --shadow-orange: -10px 31px 20px -2px rgba(252, 168, 78, 0.2);
   --shadow-purple: 0px 8px 35px 0px rgb(161, 90, 248);
   --shadow-purple-main: -43px 61px 20px 0px rgba(161, 90, 248, 0.47);
@@ -1079,6 +1079,8 @@ h1 {
 
 .schedule-container {
   overflow: auto;
+  -ms-overflow-style: auto;
+  scrollbar-width: thin;
   max-height: 600px;
   display: flex;
   flex-direction: column;
@@ -1156,6 +1158,10 @@ h1 {
   background-color: var(--color-background-geography);
 }
 
+.biology {
+  background-color: var(--color-background-biology);
+}
+
 .ukrainian-language {
   background-color: var(--color-background-ukrainian-language);
 }
@@ -1164,11 +1170,7 @@ h1 {
   background-color: var(--color-background-foreign-language);
 }
 
-.biology {
-  background-color: var(--color-background-biology);
-}
-
-.math, .physics, .chemistry, .literature, .history, .geography, .biology, .ukrainian-language, .foreign-language {
+.math, .physics, .chemistry, .literature, .history, .geography, .ukrainian-language, .biology, .foreign-language {
   border-radius: 30px;
   padding: 10px;
 }
@@ -1310,6 +1312,11 @@ h1 {
   right: 10px;
 }
 
+@media (max-width: 767px) {
+  .section_contact-sociable-item-img {
+    height: 45px;
+  }
+}
 .section_contact-text {
   padding-left: 30px;
 }
