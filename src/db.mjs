@@ -34,7 +34,10 @@ export async function getPhotos(limit, offset)
         // RESULTS = images/photo_gallery/images_2.webp   |   TOTALPHOTOS = 12
         return {results, totalPhotos};
     } 
-    catch (error) { console.log(error); }
+    catch (error) { 
+        console.log(error); 
+        return { results: [], totalPhotos: 0 };
+    }
 }
 
 export async function getOurTeachers()
@@ -43,7 +46,10 @@ export async function getOurTeachers()
         const [results, fields] = await connection.query("SELECT * FROM `our_teachers`");
         return results;
     } 
-    catch (error) { console.log(error); }
+    catch (error) { 
+        console.log(error); 
+        return [];
+    }
 }
 
 export async function getSchedule()
@@ -51,13 +57,24 @@ export async function getSchedule()
     try {
         const [results, fields] = await connection.query("SELECT * FROM `schedule`");
         return results;
-    } catch (error) { console.log(error); }
+    } catch (error) { 
+        console.log(error); 
+        return [];
+    }
 }
 
-export async function getAdvertisement()
+export async function getAdvertisements()
 {
     try {
-        const [results, fields] = await connection.query("SELECT * FROM `advertisement`");
-        return results;
-    } catch (error) { console.log(error); }
+        const [resultsNoLast, fieldsNoLast] = await connection.query("SELECT * FROM `advertisement` ORDER BY `ID` DESC LIMIT 1, 10000");
+        const [rows] = await connection.query("SELECT COUNT(*) AS `total` FROM `advertisement`");
+        const totalAds = rows[0]?.total ?? 0; 
+        const [resultForLast, fieldsForLast] = await connection.query("SELECT * FROM `advertisement` ORDER BY `ID` DESC LIMIT 1");
+
+        return {resultsNoLast, totalAds, resultForLast};
+    } 
+    catch (error) { 
+        console.log(error); 
+        return { resultsNoLast: [], totalAd: 0, resultForLast: null };
+    }
 }

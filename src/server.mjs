@@ -69,9 +69,10 @@ app.get("/api/our_teachers", async (req, res) => {
     };
 })
 
-app.get("/api/advertisement", async (req, res) => {
+app.get("/api/advertisements", async (req, res) => {
     try {
-        res.json(await db.getAdvertisement());
+        const offset = parseInt(req.query.offset) || 0;
+        res.json(await db.getAdvertisements(offset));
     }
     catch (error) {
         res.status(500).json({ error : error.message });

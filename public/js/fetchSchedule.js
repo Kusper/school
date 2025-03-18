@@ -19,8 +19,10 @@ async function loadSchedule() {
         const response = await fetch(`/api/schedule`);
         const data = await response.json();
         // Check data existance
-        if( data.length === 0)
-            console.error("[fetchSchedule.js] No data to fetch", error);
+        if( data.length === 0){
+            console.error("[fetchSchedule.js] No schedule to fetch", error);
+            return;
+        }
 
         data.forEach((item, index) => {
 

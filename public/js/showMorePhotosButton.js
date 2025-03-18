@@ -38,7 +38,7 @@ async function loadPhotos() {
 }
 
 // Insert photos on page loading
-addEventListener(document, loadPhotos() );
+loadPhotos();
 
 button.addEventListener("click", function (e) {
     e.preventDefault();
