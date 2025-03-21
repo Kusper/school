@@ -1420,10 +1420,21 @@ h1 {
 .advertisement {
   padding: 1.5rem 0;
 }
+.advertisement__button {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
 @media (max-width: 1102px) {
   .advertisement {
     padding: 3rem 0;
   }
+}
+
+.section__advertisement-container-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
 }
 
 .section_advertisement-active {
@@ -1435,6 +1446,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 @media (max-width: 1102px) {
@@ -1442,6 +1454,11 @@ h1 {
     flex-direction: column;
     align-items: center;
   }
+}
+.section_advertisement-active_list-item {
+  background: var(--color-gradient-green);
+  border-radius: 60px;
+  padding-bottom: 2rem;
 }
 .section_advertisement-active_list-item-img {
   padding-bottom: 1rem;
@@ -1453,7 +1470,6 @@ h1 {
 .section_advertisement-active_list-item-text {
   max-width: 15rem;
   text-align: center;
-  margin-bottom: 5rem;
 }
 .section_advertisement-active_list-item-text-name {
   padding-bottom: 0.5rem;
