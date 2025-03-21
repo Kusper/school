@@ -229,18 +229,23 @@ svg * {
                   rgb(152, 74, 247) 0.037%,
                   rgb(143, 62, 246) 100%);
   --color-gradient-green: radial-gradient(
-                circle,
-                rgb(136, 209, 109),
-                rgb(89, 198, 48));
-  --color-background-math: #83b0e4;
-  --color-background-physics: #97dfba;
-  --color-background-chemistry: #c78fdd;
-  --color-background-literature: #f1b48b;
-  --color-background-history: #e28379;
-  --color-background-geography: #8bd188;
-  --color-background-ukrainian-language: #b9ade2;
-  --color-background-biology: #e491b8;
-  --color-background-foreign-language: #ebd57e;
+                  circle,
+                  rgb(136, 209, 109),
+                  rgb(89, 198, 48));
+  --color-background-math: #4A90E2;
+  --color-background-physics: #50E3C2;
+  --color-background-chemistry: #9B59B6;
+  --color-background-literature: #F39C12;
+  --color-background-history: #E74C3C;
+  --color-background-geography: #378f7d;
+  --color-background-ukrainian-language: #93acbd;
+  --color-background-biology: #d1f382;
+  --color-background-foreign-language: #F1C40F;
+  --color-announcements: #F39C12;
+  --color-gallery: #9B59B6;
+  --color-teachers: #378f7d;
+  --color-add-user: #4A90E2;
+  --color-default: #ddd;
   --shadow-orange: -10px 31px 20px -2px rgba(252, 168, 78, 0.2);
   --shadow-purple: 0px 8px 35px 0px rgb(161, 90, 248);
   --shadow-purple-main: -43px 61px 20px 0px rgba(161, 90, 248, 0.47);
@@ -1079,22 +1084,23 @@ h1 {
 
 .schedule-container {
   overflow: auto;
+  -ms-overflow-style: auto;
+  scrollbar-width: thin;
   max-height: 600px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 1400px;
 }
-.schedule-container-day {
-  padding: 0 4rem;
-  height: auto;
-  border-radius: 800px 800px 0 0;
+.schedule-container-day__day {
   background: radial-gradient(61% 61% at 50% 50%, rgb(136, 209, 109) 14.534%, rgb(89, 198, 48) 87.476%);
   box-shadow: 5px 15px 20px 0 rgba(89, 198, 48, 0.67);
+  margin-bottom: 0.3rem;
+  border-radius: 30px;
+  height: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 5rem;
-  margin-bottom: 2rem;
+  gap: 0.5rem;
   box-sizing: border-box;
 }
 .schedule-container-lessons {
@@ -1104,7 +1110,7 @@ h1 {
   gap: 1rem;
 }
 .schedule-container-lessons__card {
-  max-width: 10rem;
+  max-width: 13rem;
   min-width: 10rem;
   height: auto;
   margin: 5px;
@@ -1156,6 +1162,10 @@ h1 {
   background-color: var(--color-background-geography);
 }
 
+.biology {
+  background-color: var(--color-background-biology);
+}
+
 .ukrainian-language {
   background-color: var(--color-background-ukrainian-language);
 }
@@ -1164,11 +1174,7 @@ h1 {
   background-color: var(--color-background-foreign-language);
 }
 
-.biology {
-  background-color: var(--color-background-biology);
-}
-
-.math, .physics, .chemistry, .literature, .history, .geography, .biology, .ukrainian-language, .foreign-language {
+.math, .physics, .chemistry, .literature, .history, .geography, .ukrainian-language, .biology, .foreign-language {
   border-radius: 30px;
   padding: 10px;
 }
@@ -1310,6 +1316,11 @@ h1 {
   right: 10px;
 }
 
+@media (max-width: 767px) {
+  .section_contact-sociable-item-img {
+    height: 45px;
+  }
+}
 .section_contact-text {
   padding-left: 30px;
 }
@@ -1393,13 +1404,37 @@ h1 {
   }
 }
 
+.advertisement__popup {
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+  border-radius: 100px;
+  box-shadow: 0px 22px 45px 0px rgb(251, 155, 52);
+  background: rgba(251, 155, 52, 0.27);
+}
+
+.advertisement__text--popup {
+  padding: 5rem;
+}
+
 .advertisement {
   padding: 1.5rem 0;
+}
+.advertisement__button {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 @media (max-width: 1102px) {
   .advertisement {
     padding: 3rem 0;
   }
+}
+
+.section__advertisement-container-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
 }
 
 .section_advertisement-active {
@@ -1411,6 +1446,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 @media (max-width: 1102px) {
@@ -1418,6 +1454,11 @@ h1 {
     flex-direction: column;
     align-items: center;
   }
+}
+.section_advertisement-active_list-item {
+  background: var(--color-gradient-green);
+  border-radius: 60px;
+  padding-bottom: 2rem;
 }
 .section_advertisement-active_list-item-img {
   padding-bottom: 1rem;
@@ -1429,7 +1470,6 @@ h1 {
 .section_advertisement-active_list-item-text {
   max-width: 15rem;
   text-align: center;
-  margin-bottom: 5rem;
 }
 .section_advertisement-active_list-item-text-name {
   padding-bottom: 0.5rem;
@@ -1503,6 +1543,153 @@ h1 {
   .section__values-list-item_text {
     padding: 0.5rem;
   }
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+@media (max-width: 767px) {
+  .tab {
+    flex-direction: column;
+  }
+}
+.tab-button {
+  padding: 10px 20px;
+  background-color: var(--color-default);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+@media (max-width: 1421px) {
+  .tab-button {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1102px) {
+  .tab-button {
+    font-size: 12px;
+  }
+}
+@media (max-width: 767px) {
+  .tab-button {
+    font-size: 10px;
+  }
+}
+.tab-button.active {
+  transform: scale(1.1);
+  background-color: inherit;
+  color: white;
+}
+.tab-content {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+}
+.tab-content.active {
+  display: block;
+}
+
+.sticky-button {
+  position: fixed;
+  bottom: 10rem;
+  right: 15rem;
+  width: 70px;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: var(--color-default);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+@media (max-width: 1421px) {
+  .sticky-button {
+    right: 5rem;
+  }
+}
+@media (max-width: 1102px) {
+  .sticky-button {
+    right: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .sticky-button {
+    right: 1rem;
+    bottom: 2rem;
+  }
+}
+.sticky-button:hover {
+  transform: scale(1.1);
+}
+.sticky-button-plus-icon {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.section__header-admin-panel {
+  font-size: 32px;
+}
+@media (max-width: 1102px) {
+  .section__header-admin-panel {
+    font-size: 24px;
+  }
+}
+
+.section-admin-panel__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.user-form fieldset {
+  border: none;
+  padding: 0;
+}
+.user-form legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.user-form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+.user-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-submit {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  background: var(--color-background-ukrainian-language);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-submit:hover {
+  background: var(--color-add-user);
 }
 
 /*# sourceMappingURL=style.css.map */

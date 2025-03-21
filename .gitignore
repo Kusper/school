@@ -1,14 +1,11 @@
 # Default ignored files
-/.idea/shelf/
+/shelf/
 /workspace.xml
 # Editor-based HTTP Client requests
 /httpRequests/
 # Node.js dependencies
 node_modules
-<<<<<<< HEAD
-=======
 package-lock.json
->>>>>>> a823d38 (Fix gitignore file)
 # Logs
 logs/
 *.log

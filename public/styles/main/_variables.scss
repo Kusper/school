@@ -17,19 +17,25 @@
                   rgb(152, 74, 247) 0.037%,
                   rgb(143, 62, 246) 100%);
   --color-gradient-green: radial-gradient(
-                circle,
-                rgb(136, 209, 109),
-                rgb(89, 198, 48));
+                  circle,
+                  rgb(136, 209, 109),
+                  rgb(89, 198, 48));
 
---color-background-math: #4A90E2;
---color-background-physics: #50E3C2;
---color-background-chemistry: #9B59B6;
---color-background-literature: #F39C12;
---color-background-history: #E74C3C;
---color-background-geography: #378f7d;
---color-background-ukrainian-language: #93acbd;
---color-background-biology: #d1f382;
---color-background-foreign-language: #F1C40F;
+  --color-background-math: #4A90E2;
+  --color-background-physics: #50E3C2;
+  --color-background-chemistry: #9B59B6;
+  --color-background-literature: #F39C12;
+  --color-background-history: #E74C3C;
+  --color-background-geography: #378f7d;
+  --color-background-ukrainian-language: #93acbd;
+  --color-background-biology: #d1f382;
+  --color-background-foreign-language: #F1C40F;
+
+  --color-announcements: #F39C12;
+  --color-gallery: #9B59B6;
+  --color-teachers: #378f7d;
+  --color-add-user: #4A90E2;
+  --color-default: #ddd;
 
   --shadow-orange: -10px 31px 20px -2px rgba(252, 168, 78, 0.2);
   --shadow-purple: 0px 8px 35px 0px rgb(161, 90, 248);
