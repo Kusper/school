@@ -79,6 +79,22 @@ app.get("/api/advertisements", async (req, res) => {
     };
 })
 
+app.get("/api/advertisements/:adID", async (req, res) => {
+    const adID = req.params.adID;
+
+    try{
+        const result = await db.getAdvertisementsByID(adID);
+        
+        if(!result)
+            return res.status(404).json({message: "[server.mjs] Advertisement not found"});
+        return res.json(result);
+    }
+    catch(error) {
+        console.error("[server.mjs] Error fetching advertisement by ID:", error);
+        res.status(500).json({message: "Internal server error"});
+    }
+})
+
 ///////////////////////////////////////
 ///       Dynamic page routing      ///
 ///////////////////////////////////////

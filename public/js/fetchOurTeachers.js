@@ -17,6 +17,9 @@ fetch("/api/our_teachers")
                     <div class="section_advertisement-active_list-item-text">
                         <h2 class="section_advertisement-active_list-item-text-name" itemprop="name">${item.full_name}</h2>
                     </div>
+                    <div class="section__advertisement-container-button">
+                        <button class="section__gallery-container-button">Читати більше</button>
+                    </div>
                 </article>`;
         });
     })

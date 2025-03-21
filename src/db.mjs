@@ -78,3 +78,8 @@ export async function getAdvertisements()
         return { resultsNoLast: [], totalAd: 0, resultForLast: null };
     }
 }
+
+export async function getAdvertisementsByID(adID) {
+    const [results, fields] = await connection.query("SELECT * FROM `advertisement` WHERE `ID` = ?", [adID]);
+    return results;
+}

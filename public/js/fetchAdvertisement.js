@@ -1,13 +1,14 @@
 const newAdBlock = document.querySelector(".section_advertisement-new");
 const activeAdBlocks = document.querySelector(".section_advertisement-active_list");
 
+// Insert ads on page loading
 fetch("/api/advertisements")
     .then( res => res.json())
     .then( data => {
 
         // Check data existance
         if(!data.resultForLast){
-            console.error("[fetchNewAdvertisement.js] No advertisement to fetch");
+            console.error("[fetchAdvertisement.js] No advertisement to fetch");
             return;
         }
 
@@ -39,7 +40,7 @@ fetch("/api/advertisements")
         totalAds = data.totaAds;
 
         data.resultsNoLast.forEach(item => {
-            activeAdBlocks.innerHTML += `<div class="section_advertisement-active_list-item">
+            activeAdBlocks.innerHTML += `<div class="section_advertisement-active_list-item" data-id="${item.ID}">
                     <div class="section_advertisement-active_list-item-img">
                         <img
                                 class="section_advertisement-active_list-item-img_image"
@@ -50,7 +51,55 @@ fetch("/api/advertisements")
                     <div class="section_advertisement-active_list-item-text">
                         <h3 class="section_advertisement-active_list-item-text-name">${item.title}</h3>
                     </div>
+                    <div class="section__advertisement-container-button">
+                        <button class="section__gallery-container-button">Читати більше</button>
+                    </div>
                 </div>`
         });
     })
-    .catch( error => console.error("[fetchNewAdvertisement.js] Error fetching new ad:", error))
+    .catch( error => console.error("[fetchAdvertisement.js] Error fetching new ad:", error))
+
+///////////////////////////////////////
+///        Event listeners          ///
+///////////////////////////////////////
+const popup = document.querySelector(".advertisement__popup");
+// Open popup
+document.addEventListener("click", (event) => { 
+    if(event.target.matches(".section__gallery-container-button"))
+    {
+        const adBlock = event.target.closest(".section_advertisement-active_list-item");
+        const adID = adBlock.getAttribute("data-id");
+        console.log(`========= ${adID}`);
+        fetch(`/api/advertisements/${adID}`)
+        .then( res => res.json())
+        .then( data => {
+
+            // Check data existence
+            if(!data || data.lenth == 0){
+                console.error("[fetchAdvertisement.js] No advertisement to fetch by ID");
+                return;
+            }
+
+            popup.innerHTML = `<div class="advertisement__text advertisement__text--popup">
+                    <div class="section_advertisement-new-text-close-button">X</div>
+                    <h2 class="section_advertisement-new_text_name">
+                        ${data[0].title}
+                    </h2>
+                    <p class="section_advertisement-new_text_description">
+                        ${data[0].description}
+                    </p>
+                </div>`    
+                
+            popup.style.display = "block";
+        })
+        .catch( error => console.error("[fetchAdvertisement.js] Error fetching new ad:", error))
+    }
+})
+
+// Close popup 
+document.addEventListener("click", (event) => { 
+    if(event.target.matches(".section_advertisement-new-text-close-button"))
+    {
+        popup.style.display = "none";
+    }
+})

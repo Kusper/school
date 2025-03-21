@@ -1693,3 +1693,11 @@ h1 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.hidden-popup {
+  display: none;
+}
+
+.section_advertisement-new-text-close-button {
+  color: red;
+}
