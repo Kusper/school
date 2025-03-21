@@ -13,7 +13,7 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 3000;
-const allowedPages = ["index", "advertisement", "gallery", "our_teachers", "about_us", "adminPanel"];
+const allowedPages = ["index", "advertisement", "gallery", "our_teachers", "about_us"];
 
 ///////////////////////////////////////
 
@@ -111,6 +111,20 @@ app.get("/api/advertisements/:adID", async (req, res) => {
     }
 })
 
+app.get("/adminPanel", (req, res) => {
+    const clientIP = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+    const formatedClientIP = clientIP.replace(/^::ffff:/, "");                    
+    const allowedIPs = process.env.ALLOWED_IP.split(",");
+    
+    if(!allowedIPs.includes(formatedClientIP))
+        res.status(403).send("Access denied");
+
+    const filePath = path.join(__dirname, `../public/html/adminPanel.html`);
+    if (fs.existsSync(filePath)) res.sendFile(filePath);
+    else res.redirect("/");
+    
+})
+
 ///////////////////////////////////////
 ///       Dynamic page routing      ///
 ///////////////////////////////////////
@@ -118,11 +132,9 @@ app.get("/:page", (req, res) => {
     const page = req.params.page;
     const filePath = path.join(__dirname, `../public/html/${page}.html`);
 
-    if (allowedPages.includes(page) && fs.existsSync(filePath)) {
+    if (allowedPages.includes(page) && fs.existsSync(filePath))
         res.sendFile(filePath);
-    } else {
-        res.redirect("/");
-    }
+    else res.redirect("/");
 });
 
 app.listen(PORT, () => {
