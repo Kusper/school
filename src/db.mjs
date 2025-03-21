@@ -52,6 +52,11 @@ export async function getOurTeachers()
     }
 }
 
+export async function getOurTeachersByID(teacherID) {
+    const [results, fields] = await connection.query("SELECT * FROM `our_teachers` WHERE `ID` = ?", [teacherID]);
+    return results;
+}
+
 export async function getSchedule()
 {
     try {

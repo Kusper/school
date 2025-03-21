@@ -69,6 +69,22 @@ app.get("/api/our_teachers", async (req, res) => {
     };
 })
 
+app.get("/api/our_teachers/:teacherID", async (req, res) => {
+    const teacherID = req.params.teacherID;
+
+    try{
+        const result = await db.getOurTeachersByID(teacherID);
+        
+        if(!result)
+            return res.status(404).json({message: `[server.mjs] Teacher with ID=${teacherID} not found`});
+        return res.json(result);
+    }
+    catch(error) {
+        console.error("[server.mjs] Error fetching teacher by ID:", error);
+        res.status(500).json({message: "Internal server error"});
+    }
+})
+
 app.get("/api/advertisements", async (req, res) => {
     try {
         const offset = parseInt(req.query.offset) || 0;
@@ -86,7 +102,7 @@ app.get("/api/advertisements/:adID", async (req, res) => {
         const result = await db.getAdvertisementsByID(adID);
         
         if(!result)
-            return res.status(404).json({message: "[server.mjs] Advertisement not found"});
+            return res.status(404).json({message: `[server.mjs] Advertisement with ID=${adID} not found`});
         return res.json(result);
     }
     catch(error) {

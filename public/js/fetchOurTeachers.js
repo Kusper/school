@@ -1,11 +1,11 @@
 const teachersBlock = document.querySelector(".section_advertisement-active_list");
 
-
+// Insert our teachers on page load
 fetch("/api/our_teachers")
     .then( res => res.json())
     .then( data => {
         data.forEach(item => {
-            teachersBlock.innerHTML += `<article class="section_advertisement-active_list-item" itemscope itemtype="https://schema.org/Person">
+            teachersBlock.innerHTML += `<article class="section_advertisement-active_list-item" itemscope itemtype="https://schema.org/Person" data-id="${item.ID}">
                     <div class="section_advertisement-active_list-item-img">
                         <img
                                 class="section_advertisement-active_list-item-img_image"
@@ -23,4 +23,58 @@ fetch("/api/our_teachers")
                 </article>`;
         });
     })
-    .catch( error => console.error("Error fetching our_techers:", error))
+    .catch( error => console.error("Error fetching our techers:", error))
+
+const popup = document.querySelector(".advertisement__popup");
+// Open popup
+document.addEventListener("click", (event) => { 
+    if(event.target.matches(".section__gallery-container-button"))
+    {
+        const teacherBlock = event.target.closest(".section_advertisement-active_list-item");
+        const teacherID = teacherBlock.getAttribute("data-id");
+        console.log(`========= ${teacherID}`);
+        fetch(`/api/our_teachers/${teacherID}`)
+        .then( res => res.json())
+        .then( data => {
+
+            // Check data existence
+            if(!data || data.lenth == 0){
+                console.error("[fetchOurTeachers.js] No teacher to fetch by ID");
+                return;
+            }
+
+            popup.innerHTML = `<div class="advertisement__text advertisement__text--popup">
+                    <div class="section_advertisement-new-text-close-button">X</div>
+                    <div class="section_advertisement-active_list-item-img">
+                        <img
+                                class="section_advertisement-active_list-item-img_image"
+                                src="../${data[0].picture_path}"
+                                alt="Портрет викладача ${data[0].full_name}"
+                                loading="lazy"
+                                itemprop="image">
+                    </div>
+                    <h2 class="section_advertisement-new_text_name">
+                        ${data[0].full_name}
+                    </h2>
+                    <p class="section_advertisement-new_text_description">
+                        ${data[0].subject}
+                    </p>
+                    <br>
+                    <p class="section_advertisement-new_text_description">
+                        ${data[0].description}
+                    </p>
+                </div>`    
+                
+            popup.style.display = "block";
+        })
+        .catch( error => console.error("[fetchAdvertisement.js] Error fetching new ad:", error))
+    }
+})
+
+// Close popup 
+document.addEventListener("click", (event) => { 
+    if(event.target.matches(".section_advertisement-new-text-close-button"))
+    {
+        popup.style.display = "none";
+    }
+})
