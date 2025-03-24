@@ -5,6 +5,12 @@ fetch("/api/our_teachers")
     .then( res => res.json())
     .then( data => {
         data.forEach(item => {
+            // Check data existence
+            if(!data || data.lenth == 0){
+                console.error("[fetchOurTeachers.js] No teacher to fetch");
+                return;
+            }
+
             teachersBlock.innerHTML += `<article class="section_advertisement-active_list-item" itemscope itemtype="https://schema.org/Person" data-id="${item.ID}">
                     <div class="section_advertisement-active_list-item-img">
                         <img
@@ -23,7 +29,7 @@ fetch("/api/our_teachers")
                 </article>`;
         });
     })
-    .catch( error => console.error("Error fetching our techers:", error))
+    .catch( error => console.error("[fetchOurTeachers.js] Error fetching our techers:", error))
 
 const popup = document.querySelector(".advertisement__popup");
 // Open popup
@@ -32,7 +38,7 @@ document.addEventListener("click", (event) => {
     {
         const teacherBlock = event.target.closest(".section_advertisement-active_list-item");
         const teacherID = teacherBlock.getAttribute("data-id");
-        console.log(`========= ${teacherID}`);
+        
         fetch(`/api/our_teachers/${teacherID}`)
         .then( res => res.json())
         .then( data => {
@@ -67,7 +73,7 @@ document.addEventListener("click", (event) => {
                 
             popup.style.display = "block";
         })
-        .catch( error => console.error("[fetchAdvertisement.js] Error fetching new ad:", error))
+        .catch( error => console.error("[fetchOurTeachers.js] Error fetching our teacher:", error))
     }
 })
 
@@ -76,5 +82,6 @@ document.addEventListener("click", (event) => {
     if(event.target.matches(".section_advertisement-new-text-close-button"))
     {
         popup.style.display = "none";
+        popup.innerHTML = ``;
     }
 })

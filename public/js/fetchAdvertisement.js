@@ -8,7 +8,7 @@ fetch("/api/advertisements")
 
         // Check data existance
         if(!data.resultForLast){
-            console.error("[fetchAdvertisement.js] No advertisement to fetch");
+            console.error("[fetchAdvertisement.js] No advertisements to fetch");
             return;
         }
 
@@ -37,8 +37,6 @@ fetch("/api/advertisements")
         ///////////////////////////////////////
         ///        Load active Ads          ///
         ///////////////////////////////////////
-        totalAds = data.totaAds;
-
         data.resultsNoLast.forEach(item => {
             activeAdBlocks.innerHTML += `<div class="section_advertisement-active_list-item" data-id="${item.ID}">
                     <div class="section_advertisement-active_list-item-img">
@@ -57,7 +55,7 @@ fetch("/api/advertisements")
                 </div>`
         });
     })
-    .catch( error => console.error("[fetchAdvertisement.js] Error fetching new ad:", error))
+    .catch( error => console.error("[fetchAdvertisement.js] Error fetching new advertisement:", error))
 
 ///////////////////////////////////////
 ///        Event listeners          ///
@@ -69,14 +67,14 @@ document.addEventListener("click", (event) => {
     {
         const adBlock = event.target.closest(".section_advertisement-active_list-item");
         const adID = adBlock.getAttribute("data-id");
-        console.log(`========= ${adID}`);
+
         fetch(`/api/advertisements/${adID}`)
         .then( res => res.json())
         .then( data => {
 
             // Check data existence
             if(!data || data.lenth == 0){
-                console.error("[fetchAdvertisement.js] No advertisement to fetch by ID");
+                console.error("[fetchAdvertisement.js] No advertisements to fetch by ID");
                 return;
             }
 
@@ -92,7 +90,7 @@ document.addEventListener("click", (event) => {
                 
             popup.style.display = "block";
         })
-        .catch( error => console.error("[fetchAdvertisement.js] Error fetching new ad:", error))
+        .catch( error => console.error("[fetchAdvertisement.js] Error fetching new advertisement:", error))
     }
 })
 
@@ -101,5 +99,6 @@ document.addEventListener("click", (event) => {
     if(event.target.matches(".section_advertisement-new-text-close-button"))
     {
         popup.style.display = "none";
+        popup.innerHTML = ``;
     }
 })
