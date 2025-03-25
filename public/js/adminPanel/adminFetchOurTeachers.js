@@ -1,15 +1,17 @@
 const teachersBlock = document.querySelector("#teachers .section-admin-panel__content");
 
-// Insert teachers on page loading
-fetch("/api/our_teachers")
-    .then( res => res.json())
-    .then( data => {
-
+async function adminFetchOurTeachers() {
+    try{
+        const response = await fetch("/api/our_teachers");
+        const data = await response.json();
+        
         // Check data existance
         if(!data || data.lenth === 0){
-            console.error("[adminFetchOurTeachers.js] No teacher to fetch");
+            console.error("No teacher to fetch");
             return;
         }
+
+        teachersBlock.innerHTML = ``;
 
         data.forEach(item => {
             teachersBlock.innerHTML += `<article class="section_advertisement-active_list-item" itemscope itemtype="https://schema.org/Person" data-id="${item.ID}">
@@ -26,11 +28,18 @@ fetch("/api/our_teachers")
                     </div>
                     <div class="section__advertisement-container-button">
                         <button class="section__gallery-container-button">Читати більше</button>
+                        <div class="menu-container">
+                        <button class="menu-button">⋮</button>
+                        <div class="dropdown-menu">
+                            <button class="edit-teacher">Редагувати</button>
+                            <button class="delete-teacher">Видалити</button>
+                        </div>
                     </div>
                 </article>`
         });
-    })
-    .catch( error => console.error("[adminFetchPhotos.js] Error fetching photos:", error))
+    }
+    catch(error){ console.error("Error fetching teachers:", error) }
+}
 
 const teacherPopup = document.querySelector(".advertisement__popup");
 // Open popup
@@ -79,10 +88,13 @@ document.addEventListener("click", (event) => {
     }
 })
 
+adminFetchOurTeachers();
+
 // Close popup 
 document.addEventListener("click", (event) => { 
     if(event.target.matches(".section_advertisement-new-text-close-button"))
-    {
         teacherPopup.style.display = "none";
-    }
 })
+
+//  Add custom event
+document.addEventListener("teachersRefresh", adminFetchOurTeachers);

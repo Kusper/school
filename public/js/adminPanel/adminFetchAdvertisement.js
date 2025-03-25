@@ -86,4 +86,4 @@ document.addEventListener("click", (event) => {
 })
 
 //  Add custom event
-document.addEventListener("adsUpdate", adminFetchAdvertisement);
+document.addEventListener("adsRefresh", adminFetchAdvertisement);

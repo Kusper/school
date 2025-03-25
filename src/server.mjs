@@ -27,11 +27,13 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/html/index.html"));
 });
 
-///////////////////////////////////////
-///           API requests          ///
-///////////////////////////////////////
+                    ///////////////////////////////////////
+                    ///           API requests          ///
+                    ///////////////////////////////////////
 
-//  Photo gallery
+///////////////////////////////////////
+///           Photo gallery         ///
+///////////////////////////////////////
 app.get("/api/gallery", async (req, res) => {
     try {
         const offset = parseInt(req.query.offset);
@@ -49,7 +51,9 @@ app.get("/api/gallery", async (req, res) => {
     };
 })
 
-//  Schedule
+///////////////////////////////////////
+///             Schedule            ///
+///////////////////////////////////////
 app.get("/api/schedule", async (req, res) => {
     try {
         res.json(await db.getSchedule());
@@ -59,7 +63,9 @@ app.get("/api/schedule", async (req, res) => {
     };
 })
 
-//  Our teachers
+///////////////////////////////////////
+///            Our techers          ///
+///////////////////////////////////////
 app.get("/api/our_teachers", async (req, res) => {
     try {
         res.json(await db.getOurTeachers());
@@ -69,6 +75,7 @@ app.get("/api/our_teachers", async (req, res) => {
     };
 })
 
+//  Get by ID
 app.get("/api/our_teachers/:teacherID", async (req, res) => {
     const teacherID = req.params.teacherID;
 
@@ -85,7 +92,58 @@ app.get("/api/our_teachers/:teacherID", async (req, res) => {
     }
 })
 
-//  Advertisement 
+//  Insert
+app.post("/api/addOur_teacher", async (req, res) => {
+    const {picture_path, full_name, subject, description} = req.body;
+    if( !picture_path || !full_name || !subject || !description)
+        return res.status(400).json({message: "Missing required fields"});
+
+    try{
+        const result = await db.addOurTeacher(picture_path, full_name, subject, description)
+        // console.log("Newly inserted ad ID:", result.insertId);
+        res.json({addSuccess: true, resultID: result.insertId});
+    }
+    catch(error){
+        console.error("Error inserting teacher: ", error);
+        res.status(500).json({addSuccess:false, message: "Internal server error"});
+    }
+}) 
+
+//  Delete
+app.delete("/api/deleteOur_teacher/:teacherID", async (req, res) => {
+    const teacherID = req.params.teacherID;
+    if(!teacherID) return res.status(400).json({message: "Missing required field"});
+
+    try{
+        await db.deleteOurTeacher(teacherID);
+        res.json({ removeSuccess: true, resulID: teacherID})
+    }
+    catch(error){
+        console.error("Error deleting teacher: ", error);
+        res.status(500).json({ removeSuccess: false, message: "Internal server error"});
+    }
+})
+
+//  Update
+app.patch("/api/updateOur_teacher", async (req, res) => {
+    const {teacherID, picture_path, full_name, subject, description} = req.body;
+    console.log(teacherID, picture_path, full_name, subject, description);
+    if( !teacherID || !picture_path || !full_name || !subject || !description)
+        return res.status(400).json({message: "Missing required fields"});
+
+    try{
+        const results = await db.updateOurTeacher(teacherID, picture_path, full_name, subject, description);
+        res.json({ updateSuccess: true, results: results });
+    }
+    catch(error){
+        console.error("Error updating teacher: ", error);
+        res.status(500).json({ updateSuccess: false, message: "Internal server error" });
+    }
+})
+
+///////////////////////////////////////
+///           Advertisement         ///
+///////////////////////////////////////
 app.get("/api/advertisements", async (req, res) => {
     try {
         res.json(await db.getAdvertisements());
@@ -95,6 +153,7 @@ app.get("/api/advertisements", async (req, res) => {
     };
 })
 
+//  Get by ID
 app.get("/api/advertisements/:adID", async (req, res) => {
     const adID = req.params.adID;
 
@@ -111,6 +170,7 @@ app.get("/api/advertisements/:adID", async (req, res) => {
     }
 })
 
+//  Insert
 app.post("/api/addAdvertisement", async (req, res) => {
     const {picture_path, title, description, alt_text} = req.body;
     if( !picture_path || !title || !description || !alt_text)
@@ -127,6 +187,7 @@ app.post("/api/addAdvertisement", async (req, res) => {
     }
 }) 
 
+//  Delete
 app.delete("/api/deleteAdvertisement/:adID", async (req, res) => {
     const adID = req.params.adID;
     if(!adID) return res.status(400).json({message: "Missing required field"});
@@ -141,9 +202,10 @@ app.delete("/api/deleteAdvertisement/:adID", async (req, res) => {
     }
 })
 
+//  Update
 app.patch("/api/updateAdvertisement", async (req, res) => {
     const {adID, picture_path, title, description, alt_text} = req.body;
-    console.log(adID, picture_path, title, description, alt_text);
+    // console.log(adID, picture_path, title, description, alt_text);
     if( !adID || !picture_path || !title || !description || !alt_text)
         return res.status(400).json({message: "Missing required fields"});
 
@@ -152,12 +214,14 @@ app.patch("/api/updateAdvertisement", async (req, res) => {
         res.json({ updateSuccess: true, results: results });
     }
     catch(error){
-        console.error("Error deleting advertisement: ", error);
+        console.error("Error updating advertisement: ", error);
         res.status(500).json({ updateSuccess: false, message: "Internal server error" });
     }
 })
 
-//  Admin panel
+///////////////////////////////////////
+///           Admin panel           ///
+///////////////////////////////////////
 app.get("/adminPanel", (req, res) => {
     const clientIP = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
     const formatedClientIP = clientIP.replace(/^::ffff:/, "");                    
@@ -172,9 +236,9 @@ app.get("/adminPanel", (req, res) => {
     
 })
 
-///////////////////////////////////////
-///       Dynamic page routing      ///
-///////////////////////////////////////
+                    ///////////////////////////////////////
+                    ///       Dynamic page routing      ///
+                    ///////////////////////////////////////
 app.get("/:page", (req, res) => {
     const page = req.params.page;
     const filePath = path.join(__dirname, `../public/html/${page}.html`);

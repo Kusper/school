@@ -51,10 +51,10 @@ addButton.addEventListener("click", () => {
                                 <input type="text" id="picture_path" name="picture_path" placeholder="Введіть картинку" required autocomplete="picture_path">
                                 <label for="full_name">ПІБ:</label>
                                 <input type="text" id="full_name" name="full_name" placeholder="Іванов Іван Іванович" required autocomplete="full_name">
+                                <label for="subject">Предмет:</label>
+                                <input type="text" id="subject" name="subject" placeholder="Назва" required autocomplete="subject">
                                 <label for="description">Опис:</label>
                                 <input type="text" id="description" name="description" placeholder="Введіть опис" required autocomplete="description">
-                                <label for="alt_text">Альтернативний текст:</label>
-                                <input type="text" id="alt_text" name="alt_text" placeholder="Альтернативний текст" required autocomplete="alt_text">
                                 <button type="submit" class="btn-submit">Додати</button>
                             </fieldset>
                         </form>`
