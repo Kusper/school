@@ -11,7 +11,7 @@ document.addEventListener("submit", async (event) => {
 
     //  Form for adding a record
     
-    if(event.target && event.target.id === "user-form") {
+    if(event.target && event.target.id === "ad-form") {
         event.preventDefault();
         // console.log("Form submitted");
 
