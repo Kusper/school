@@ -19,8 +19,10 @@ async function loadSchedule() {
         const response = await fetch(`/api/schedule`);
         const data = await response.json();
         // Check data existance
-        if( data.length === 0)
-            console.error("[fetchSchedule.js] No data to fetch", error);
+        if( data.length === 0){
+            console.error("[fetchSchedule.js] No schedule to fetch", error);
+            return;
+        }
 
         data.forEach((item, index) => {
 
@@ -29,8 +31,6 @@ async function loadSchedule() {
 
             if(isDateInCurrentWeek(item.date))
             {
-                // console.log(`[fetchSchedule.js] ${item.ID} | Item date = ${item.date} | Date in current week? = ${isDateInCurrentWeek(item.date)}`);
-
                 targetDiv.innerHTML += `<div class="schedule-container-lessons__card ${divBackgrounds[item.subject]}">	
                         <div class="schedule-container-lessons__card-name"><h2 itemprop="name">${item.subject}</h2></div>
                         <div class="schedule-container-lessons__card-time"><h2 itemprop="duration">${item.start_time.slice(0, -3)}-${item.end_time.slice(0, -3)}</h2></div>
@@ -83,9 +83,3 @@ function isDateInCurrentWeek(dateToCheck){
 }
 // Insert photos on page loading
 addEventListener(document, loadSchedule() );
-
-// button.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     loadSchedule();
-// });
-

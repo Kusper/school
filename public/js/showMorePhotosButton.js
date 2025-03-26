@@ -7,7 +7,6 @@ async function loadPhotos() {
     try{
         const response = await fetch(`/api/gallery?offset=${offset}&limit=${limit}`);
         const data = await response.json();
-        //console.log(`\n[button.js] totalPhotos = ${data.totalPhotos}\n`)
 
         // Check data existance
         if( data.results.length === 0 || offset >= data.totalPhotos){
@@ -33,12 +32,12 @@ async function loadPhotos() {
         if( offset >= totalPhotos)
             button.style.display = "none";
     }
-    catch(error) { console.error("[fetchSchedule.js] Error fetching gallery:", error) }
+    catch(error) { console.error("[showMorePhotosButton.js] Error fetching gallery:", error) }
     
 }
 
 // Insert photos on page loading
-addEventListener(document, loadPhotos() );
+loadPhotos();
 
 button.addEventListener("click", function (e) {
     e.preventDefault();

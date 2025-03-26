@@ -1,16 +1,19 @@
-const teachersBlock = document.querySelector(".section_advertisement-active_list");
+const teachersBlock = document.querySelector("#teachers .section-admin-panel__content");
 
-// Insert our teachers on page load
-fetch("/api/our_teachers")
-    .then( res => res.json())
-    .then( data => {
+async function adminFetchOurTeachers() {
+    try{
+        const response = await fetch("/api/our_teachers");
+        const data = await response.json();
+        
+        // Check data existance
+        if(!data || data.lenth === 0){
+            console.error("No teacher to fetch");
+            return;
+        }
+
+        teachersBlock.innerHTML = ``;
+
         data.forEach(item => {
-            // Check data existence
-            if(!data || data.lenth == 0){
-                console.error("[fetchOurTeachers.js] No teacher to fetch");
-                return;
-            }
-
             teachersBlock.innerHTML += `<article class="section_advertisement-active_list-item" itemscope itemtype="https://schema.org/Person" data-id="${item.ID}">
                     <div class="section_advertisement-active_list-item-img">
                         <img
@@ -25,18 +28,26 @@ fetch("/api/our_teachers")
                     </div>
                     <div class="section__advertisement-container-button">
                         <button class="section__gallery-container-button">Читати більше</button>
+                        <div class="menu-container">
+                        <button class="menu-button">⋮</button>
+                        <div class="dropdown-menu">
+                            <button class="edit-teacher">Редагувати</button>
+                            <button class="delete-teacher">Видалити</button>
+                        </div>
                     </div>
-                </article>`;
+                </article>`
         });
-    })
-    .catch( error => console.error("[fetchOurTeachers.js] Error fetching our techers:", error))
+    }
+    catch(error){ console.error("Error fetching teachers:", error) }
+}
 
-const popup = document.querySelector(".advertisement__popup");
+const teacherPopup = document.querySelector(".advertisement__popup");
 // Open popup
 document.addEventListener("click", (event) => { 
     if(event.target.matches(".section__gallery-container-button"))
     {
-        const teacherBlock = event.target.closest(".section_advertisement-active_list-item");
+        const teacherBlock = event.target.closest("#teachers .section_advertisement-active_list-item");
+        if(!teacherBlock) return;
         const teacherID = teacherBlock.getAttribute("data-id");
         
         fetch(`/api/our_teachers/${teacherID}`)
@@ -45,11 +56,11 @@ document.addEventListener("click", (event) => {
 
             // Check data existence
             if(!data || data.lenth == 0){
-                console.error("[fetchOurTeachers.js] No teacher to fetch by ID");
+                console.error("[adminFetchPhotos.js] No teacher to fetch by ID");
                 return;
             }
 
-            popup.innerHTML = `<div class="advertisement__text advertisement__text--popup">
+            teacherPopup.innerHTML = `<div class="advertisement__text advertisement__text--popup">
                     <div class="section_advertisement-new-text-close-button">X</div>
                     <div class="section_advertisement-active_list-item-img">
                         <img
@@ -71,17 +82,19 @@ document.addEventListener("click", (event) => {
                     </p>
                 </div>`    
                 
-            popup.style.display = "block";
+                teacherPopup.style.display = "block";
         })
-        .catch( error => console.error("[fetchOurTeachers.js] Error fetching our teacher:", error))
+        .catch( error => console.error("[adminFetchPhotos.js] Error fetching our teachers:", error))
     }
 })
+
+adminFetchOurTeachers();
 
 // Close popup 
 document.addEventListener("click", (event) => { 
     if(event.target.matches(".section_advertisement-new-text-close-button"))
-    {
-        popup.style.display = "none";
-        popup.innerHTML = ``;
-    }
+        teacherPopup.style.display = "none";
 })
+
+//  Add custom event
+document.addEventListener("teachersRefresh", adminFetchOurTeachers);
