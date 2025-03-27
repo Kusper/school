@@ -1404,19 +1404,6 @@ h1 {
   }
 }
 
-.advertisement__popup {
-  margin: 0 auto;
-  width: 50%;
-  height: auto;
-  border-radius: 100px;
-  box-shadow: 0px 22px 45px 0px rgb(251, 155, 52);
-  background: rgba(251, 155, 52, 0.27);
-}
-
-.advertisement__text--popup {
-  padding: 5rem;
-}
-
 .advertisement {
   padding: 1.5rem 0;
 }
@@ -1478,6 +1465,82 @@ h1 {
   .section_advertisement-active_list-item-text-name {
     padding-bottom: 2rem;
   }
+}
+
+.background-color {
+  background: var(--color-background-main);
+}
+
+.hidden-popup {
+  display: none;
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-light);
+  padding: 20px;
+  border-radius: var(--border-radius-small);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  overflow: auto;
+  max-height: 600px;
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+}
+
+.section_advertisement-new-text-close-button {
+  color: red;
+  float: right;
+  cursor: pointer;
+  margin: 0.5rem 1.5rem;
+}
+
+.advertisement__text--popup-name {
+  padding-bottom: 1rem;
+}
+
+.menu-container {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+}
+.menu-container .menu-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+.menu-container .menu-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+.menu-container .dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 100px;
+}
+.menu-container .dropdown-menu button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+.menu-container .dropdown-menu button:hover {
+  background: #f0f0f0;
+}
+.menu-container.open .dropdown-menu {
+  display: block;
+}
+
+.section_advertisement-active_list-item-img_image-popup {
+  margin: 0 auto;
 }
 
 .section__gallery-list {
@@ -1646,115 +1709,9 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.user-form {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.user-form fieldset {
-  border: none;
-  padding: 0;
-}
-.user-form legend {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.user-form label {
-  display: block;
-  margin-top: 10px;
-  font-weight: 500;
-}
-.user-form input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.btn-submit {
-  margin-top: 15px;
-  width: 100%;
-  padding: 10px;
-  background: var(--color-background-ukrainian-language);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.btn-submit:hover {
-  background: var(--color-add-user);
+  margin: 3rem;
+  gap: 5rem;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=style.css.map */
-
-.hidden-popup {
-  display: none;
-  position: fixed; /* Fixed position over the entire screen */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for perfect centering */
-  background-color: white; /* White background */
-  padding: 20px; /* Add padding for some spacing */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  z-index: 9999; /* Ensure it's on top of other content */
-}
-
-.section_advertisement-new-text-close-button {
-  color: red;
-}
-
-
-.menu-container {
-  position: relative;
-  display: inline-block;
-  padding: 5px;
-}
-
-.menu-button {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-  border-radius: 50%;
-}
-
-.menu-button:hover {
-  background: rgba(0, 0, 0, 0.1);
-  color: #333;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  right: 0;
-  background: white;
-  border: 1px solid #ccc;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  min-width: 100px;
-}
-
-.dropdown-menu button {
-  width: 100%;
-  padding: 8px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.dropdown-menu button:hover {
-  background: #f0f0f0;
-}
-
-.menu-container.open .dropdown-menu {
-  display: block;
-}

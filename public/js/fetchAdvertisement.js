@@ -80,7 +80,7 @@ document.addEventListener("click", (event) => {
 
             popup.innerHTML = `<div class="advertisement__text advertisement__text--popup">
                     <div class="section_advertisement-new-text-close-button">X</div>
-                    <h2 class="section_advertisement-new_text_name">
+                    <h2 class="section_advertisement-new_text_name advertisement__text--popup-name">
                         ${data[0].title}
                     </h2>
                     <p class="section_advertisement-new_text_description">
