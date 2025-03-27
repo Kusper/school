@@ -271,19 +271,17 @@ app.patch("/api/updateAdvertisement", async (req, res) => {
 ///////////////////////////////////////
 ///           Admin panel           ///
 ///////////////////////////////////////
+app.set("trust proxy", true);
 app.get("/adminPanel", (req, res) => {
-    const clientIP = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-    const formatedClientIP = clientIP.replace(/^::ffff:/, "");                    
+    const clientIP = req.ip.replace(/^::ffff:/, "").replaceAll(":", "");
     const allowedIPs = process.env.ALLOWED_IP.split(",");
-    // console.log(allowedIPs[0]);
-    // console.log(formatedClientIP);
     
-    if(!allowedIPs.includes(formatedClientIP))
-        res.status(403).send("Access denied");
+    if(!allowedIPs.includes(clientIP))
+        return res.status(403).send("Access denied");
 
     const filePath = path.join(__dirname, `../public/html/adminPanel.html`);
-    if (fs.existsSync(filePath)) res.sendFile(filePath);
-    else res.redirect("/");
+    if (fs.existsSync(filePath)) return res.sendFile(filePath);
+    else return res.redirect("/");
     
 })
 
