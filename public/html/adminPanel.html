@@ -57,13 +57,11 @@
     </div>
 </header>
 <main class="content">
-    <main class="content">
         <div class="hero__shape-orange hidden-mobile"></div>
         <div class="tab">
             <button class="tab-button active" data-target="announcements">Оголошення</button>
             <button class="tab-button" data-target="gallery">Фотогалерея</button>
             <button class="tab-button" data-target="teachers">Наші учителі</button>
-            <button class="tab-button" data-target="add-user">Додати користувача</button>
         </div>
         <button class="sticky-button">
             <span class="sticky-button-plus-icon">+</span>
@@ -76,7 +74,6 @@
                     </h2>
                 </header>
                 <div class="section-admin-panel__content">
-                    <h1>test</h1>
                 </div>
             </section>
         </div>
@@ -88,7 +85,6 @@
                     </h2>
                 </header>
                 <div class="section-admin-panel__content">
-                    <h1>test</h1>
                 </div>
             </section>
         </div>
@@ -100,41 +96,9 @@
                     </h2>
                 </header>
                 <div class="section-admin-panel__content">
-                    <h1>test</h1>
                 </div>
             </section>
         </div>
-        <div class="tab-content" id="add-user">
-            <section class="container">
-                <header class="section__header-admin-panel">
-                    <h2 class="section__header-admin-panel">Додати
-                        <span class="section__header-color">нового користувача</span>
-                    </h2>
-                </header>
-                <div class="section-admin-panel__content">
-                    <form id="user-form" class="user-form">
-                        <fieldset>
-                            <label for="name">ПІБ:</label>
-                            <input type="text" id="name" name="name" placeholder="Введіть ПІБ" required autocomplete="name">
-                            <label for="phone">Номер телефону:</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+380XXXXXXXXX" required autocomplete="tel">
-                            <label for="password">Пароль:</label>
-                            <input type="password" id="password" name="password" placeholder="Введіть пароль" required autocomplete="new-password">
-                            <button type="submit" class="btn-submit">Додати</button>
-                        </fieldset>
-                    </form>
-                </div>
-            </section>
-        </div>
-        <div class="advertisement__popup hidden-popup">
-            <div class="advertisement__text advertisement__text--popup">
-                <div class="section_advertisement-new-text-close-button">X</div>
-                <h2 class="section_advertisement-new_text_name">TITLE</h2>
-                <p class="section_advertisement-new_text_description">DESC</p>
-            </div>
-        </div>
-    </main>
-
 </main>
 <dialog class="mobile-overlay visible-mobile" id="mobileOverlay" aria-labelledby="mobileOverlayTitle" aria-hidden="true">
     <form class="mobile-overlay__close-button-wrapper" method="dialog">
@@ -158,15 +122,6 @@
             </li>
             <li class="mobile-overlay__item">
                 <a class="mobile-overlay__link" href="/">Про нас</a>
-            </li>
-            <li class="mobile-overlay__item">
-                <a class="mobile-overlay__link-icon" href="/">Вхід
-                    <img
-                            class="mobile-overlay__img"
-                            src="../images/home/account.svg"
-                            alt="Вхід в аккаунт"
-                            loading="lazy">
-                </a>
             </li>
         </ul>
     </div>

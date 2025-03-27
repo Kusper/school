@@ -223,12 +223,6 @@ app.patch("/api/updateAdvertisement", async (req, res) => {
 ///           Admin panel           ///
 ///////////////////////////////////////
 app.get("/adminPanel", (req, res) => {
-    const clientIP = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-    const formatedClientIP = clientIP.replace(/^::ffff:/, "");                    
-    const allowedIPs = process.env.ALLOWED_IP.split(",");
-    
-    if(!allowedIPs.includes(formatedClientIP))
-        res.status(403).send("Access denied");
 
     const filePath = path.join(__dirname, `../public/html/adminPanel.html`);
     if (fs.existsSync(filePath)) res.sendFile(filePath);
