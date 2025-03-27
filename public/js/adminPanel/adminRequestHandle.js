@@ -126,6 +126,36 @@ document.addEventListener("submit", async (event) => {
         }
         catch(error){ console.error("Error", error) }
     }
+
+    ///////////////////////////////////////
+    ///          Photo gallery          ///
+    ///////////////////////////////////////
+    //  Form for adding teacher
+    if(event.target && event.target.id === "photo-form") {
+        event.preventDefault();
+        // console.log("Form submitted");
+
+        const rawData = new FormData(event.target);
+        const data = Object.fromEntries(rawData.entries());
+        // console.log(data);
+
+        try{
+            const res = await fetch("/api/addPhoto", {
+                method: "POST",
+                headers: {"Content-type": "application/json"},
+                body: JSON.stringify(data)
+            })
+        
+            const result = await res.json();
+            if(result.addSuccess) {
+                // console.log("Inserted data successfully:", result);
+                document.dispatchEvent(new CustomEvent("galleryRefresh"));
+            } 
+            else 
+                console.error("Error adding photo");
+        }
+        catch(error){ console.error("Error", error) }
+    }
 })
 
 document.addEventListener("click", async (event) => {
@@ -241,4 +271,26 @@ document.addEventListener("click", async (event) => {
         popup.style.display = "block";
 }
 
+    ///////////////////////////////////////
+    ///          Photo gallery          ///
+    ///////////////////////////////////////
+    //  Handle delete
+    if (event.target.classList.contains("delete-photo")) {
+        const photoItem = event.target.closest(".section__gallery-image");
+        const photoID = photoItem.getAttribute("data-id");
+        console.log("Deleting photo ID=", photoID);
+
+        // try{
+        //     const res = await fetch(`/api/deletePhoto/${photoID}`, { method: "DELETE" })
+        //     const result = await res.json();
+        //     console.log(result);
+        //     if(result.removeSuccess) {
+        //         console.log("Deleted data successfully:", result);
+        //         document.dispatchEvent(new CustomEvent("photosRefresh"));
+        //     } 
+        //     else 
+        //         console.error("Error removing photo");
+        // }
+        // catch(error){ console.error("Error:", error) }
+    }
 });

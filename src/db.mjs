@@ -47,6 +47,24 @@ export async function getPhotos(limit, offset)
     }
 }
 
+//  Get by ID
+export async function getPhotoByID(photoID) {
+    const [results, fields] = await connection.query("SELECT * FROM `photo_gallery` WHERE `ID` = ?", [photoID]);
+    return results;
+}
+
+//  Insert
+export async function addPhoto(photo_path, alt_text) {
+    const [result] = await connection.query("INSERT INTO `photo_gallery`(`photo_path`, `alt_text`) VALUES (?, ?)", 
+        [photo_path, alt_text]);
+    return result;
+}
+
+//  Delete
+export async function deletePhoto(photoID) {
+    await connection.query("DELETE FROM `photo_gallery` WHERE `ID`= ? ", [photoID]);
+}
+
 ///////////////////////////////////////
 ///           Our teacher           ///
 ///////////////////////////////////////

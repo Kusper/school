@@ -34,8 +34,8 @@ addButton.addEventListener("click", () => {
                     <h2 class="section_advertisement-new_text_name">${type}</h2>
                     <form id="photo-form" class="user-form">
                             <fieldset>
-                                <label for="picture_path">Картинка</label>
-                                <input type="text" id="picture_path" name="picture_path" placeholder="Введіть картинку" required autocomplete="picture_path">
+                                <label for="photo_path">Картинка</label>
+                                <input type="text" id="photo_path" name="photo_path" placeholder="Введіть картинку" required autocomplete="photo_path">
                                 <label for="alt_text">Альтернативний текст:</label>
                                 <input type="text" id="alt_text" name="alt_text" placeholder="Альтернативний текст" required autocomplete="alt_text">
                                 <button type="submit" class="btn-submit">Додати</button>
