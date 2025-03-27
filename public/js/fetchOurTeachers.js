@@ -11,7 +11,7 @@ fetch("/api/our_teachers")
                 return;
             }
 
-            teachersBlock.innerHTML += `<article class="section_advertisement-active_list-item" itemscope itemtype="https://schema.org/Person" data-id="${item.ID}">
+            teachersBlock.innerHTML += `<article class="section_advertisement-active_list-item background-color" itemscope itemtype="https://schema.org/Person" data-id="${item.ID}">
                     <div class="section_advertisement-active_list-item-img">
                         <img
                                 class="section_advertisement-active_list-item-img_image"
@@ -29,7 +29,7 @@ fetch("/api/our_teachers")
                 </article>`;
         });
     })
-    .catch( error => console.error("[fetchOurTeachers.js] Error fetching our techers:", error))
+    .catch( error => console.error("[fetchOurTeachers.js] Error fetching our teachers:", error))
 
 const popup = document.querySelector(".advertisement__popup");
 // Open popup
@@ -53,7 +53,7 @@ document.addEventListener("click", (event) => {
                     <div class="section_advertisement-new-text-close-button">X</div>
                     <div class="section_advertisement-active_list-item-img">
                         <img
-                                class="section_advertisement-active_list-item-img_image"
+                                class="section_advertisement-active_list-item-img_image section_advertisement-active_list-item-img_image-popup"
                                 src="../${data[0].picture_path}"
                                 alt="Портрет викладача ${data[0].full_name}"
                                 loading="lazy"
@@ -62,7 +62,7 @@ document.addEventListener("click", (event) => {
                     <h2 class="section_advertisement-new_text_name">
                         ${data[0].full_name}
                     </h2>
-                    <p class="section_advertisement-new_text_description">
+                    <p class="section_advertisement-new_text_description section_advertisement-new_text_name">
                         ${data[0].subject}
                     </p>
                     <br>

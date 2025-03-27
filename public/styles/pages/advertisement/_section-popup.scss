@@ -1,0 +1,77 @@
+.hidden-popup {
+  display: none;
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-light);
+  padding: 20px;
+  border-radius: var(--border-radius-small);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  overflow: auto;
+  max-height: 600px;
+  scrollbar-width: thin;
+  -ms-overflow-style: auto;
+}
+
+.section_advertisement-new-text-close-button {
+  color: red;
+  float: right;
+  cursor: pointer;
+  margin: 0.5rem 1.5rem;
+}
+
+.advertisement__text--popup-name {
+  padding-bottom: 1rem;
+}
+
+.menu-container {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+
+  .menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.2s, color 0.2s;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+      color: #333;
+    }
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 100px;
+
+    button {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      text-align: left;
+
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+  }
+
+  &.open .dropdown-menu {
+    display: block;
+  }
+}
+
+.section_advertisement-active_list-item-img_image-popup {
+  margin: 0 auto;
+}
