@@ -1650,7 +1650,6 @@ h1 {
 .tab-content {
   display: none;
   padding: 20px;
-  border: 1px solid #ddd;
   margin-top: 10px;
 }
 .tab-content.active {
