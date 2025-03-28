@@ -47,6 +47,31 @@ export async function getPhotos(limit, offset)
     }
 }
 
+//  Get by ID
+export async function getPhotoByID(photoID) {
+    const [results, fields] = await connection.query("SELECT * FROM `photo_gallery` WHERE `ID` = ?", [photoID]);
+    return results;
+}
+
+//  Insert
+export async function addPhoto(photo_path, alt_text) {
+    const [result] = await connection.query("INSERT INTO `photo_gallery`(`photo_path`, `alt_text`) VALUES (?, ?)", 
+        [photo_path, alt_text]);
+    return result;
+}
+
+//  Delete
+export async function deletePhoto(photoID) {
+    await connection.query("DELETE FROM `photo_gallery` WHERE `ID`= ? ", [photoID]);
+}
+
+//  Update
+export async function updatePhoto(photoID, photo_path, alt_text) {
+    const [results] = await connection.query("UPDATE `photo_gallery` SET `photo_path`= ? ,`alt_text`= ? WHERE `ID` = ?", 
+        [photo_path, alt_text, photoID]);
+    return results;
+}
+
 ///////////////////////////////////////
 ///           Our teacher           ///
 ///////////////////////////////////////
@@ -80,7 +105,7 @@ export async function deleteOurTeacher(teacherID) {
     await connection.query("DELETE FROM `our_teachers` WHERE `ID`= ? ", [teacherID]);
 }
 
-//  Insert
+//  Update
 export async function updateOurTeacher(teacherID, picture_path, full_name, subject, description) {
     const [results] = await connection.query("UPDATE `our_teachers` SET `picture_path`= ? ,`full_name`= ? ,`subject`= ? ,`description`= ? WHERE `ID` = ?", 
         [picture_path, full_name, subject, description, teacherID]);

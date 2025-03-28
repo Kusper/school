@@ -51,6 +51,72 @@ app.get("/api/gallery", async (req, res) => {
     };
 })
 
+//  Get by ID
+app.get("/api/gallery/:photoID", async (req, res) => {
+    const photoID = req.params.photoID;
+
+    try{
+        const result = await db.getPhotoByID(photoID);
+        
+        if(!result)
+            return res.status(404).json({message: `Photo with ID=${photoID} not found`});
+        return res.json(result);
+    }
+    catch(error) {
+        console.error("Error fetching photo by ID:", error);
+        res.status(500).json({message: "Internal server error"});
+    }
+})
+
+//  Insert
+app.post("/api/addPhoto", async (req, res) => {
+    const {photo_path, alt_text} = req.body;
+    if( !photo_path || !alt_text)
+        return res.status(400).json({message: "Missing required fields"});
+
+    try{
+        const result = await db.addPhoto(photo_path, alt_text)
+        // console.log("Newly inserted ad ID:", result.insertId);
+        res.json({addSuccess: true, resultID: result.insertId});
+    }
+    catch(error){
+        console.error("Error inserting photo: ", error);
+        res.status(500).json({addSuccess:false, message: "Internal server error"});
+    }
+}) 
+
+//  Delete
+app.delete("/api/deletePhoto/:photoID", async (req, res) => {
+    const photoID = req.params.photoID;
+    if(!photoID) return res.status(400).json({message: "Missing required field"});
+
+    try{
+        await db.deletePhoto(photoID);
+        res.json({ removeSuccess: true, resulID: photoID})
+    }
+    catch(error){
+        console.error("Error deleting photo: ", error);
+        res.status(500).json({ removeSuccess: false, message: "Internal server error"});
+    }
+})
+
+//  Update
+app.patch("/api/updatePhoto", async (req, res) => {
+    const {photoID, photo_path, alt_text} = req.body;
+    console.log(photoID, photo_path, alt_text);
+    if( !photoID || !photo_path || !alt_text)
+        return res.status(400).json({message: "Missing required fields"});
+
+    try{
+        const results = await db.updatePhoto(photoID, photo_path, alt_text);
+        res.json({ updateSuccess: true, results: results });
+    }
+    catch(error){
+        console.error("Error updating photo: ", error);
+        res.status(500).json({ updateSuccess: false, message: "Internal server error" });
+    }
+})
+
 ///////////////////////////////////////
 ///             Schedule            ///
 ///////////////////////////////////////
@@ -127,7 +193,7 @@ app.delete("/api/deleteOur_teacher/:teacherID", async (req, res) => {
 //  Update
 app.patch("/api/updateOur_teacher", async (req, res) => {
     const {teacherID, picture_path, full_name, subject, description} = req.body;
-    console.log(teacherID, picture_path, full_name, subject, description);
+    // console.log(teacherID, picture_path, full_name, subject, description);
     if( !teacherID || !picture_path || !full_name || !subject || !description)
         return res.status(400).json({message: "Missing required fields"});
 
@@ -222,11 +288,17 @@ app.patch("/api/updateAdvertisement", async (req, res) => {
 ///////////////////////////////////////
 ///           Admin panel           ///
 ///////////////////////////////////////
+app.set("trust proxy", true);
 app.get("/adminPanel", (req, res) => {
+    const clientIP = req.ip.replace(/^::ffff:/, "").replaceAll(":", "");
+    const allowedIPs = process.env.ALLOWED_IP.split(",");
+    
+    if(!allowedIPs.includes(clientIP))
+        return res.status(403).send("Access denied");
 
     const filePath = path.join(__dirname, `../public/html/adminPanel.html`);
-    if (fs.existsSync(filePath)) res.sendFile(filePath);
-    else res.redirect("/");
+    if (fs.existsSync(filePath)) return res.sendFile(filePath);
+    else return res.redirect("/");
     
 })
 
