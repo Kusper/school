@@ -14,18 +14,19 @@ async function adminFetcGallery() {
         photoBlock.innerHTML = ``;
 
         data.forEach(item => {
-            photoBlock.innerHTML += `<img 
+            photoBlock.innerHTML += `<div class="admin_image_container" data-id="${item.ID}"><img 
                         class="section__gallery-image"
                         src="../${item.photo_path}"
                         alt="${item.alt_text}"
                         loading="lazy"
-                        itemprop="contentUrl" data-id="${item.ID}">
+                        itemprop="contentUrl">
                         <div class="menu-container">
-                        <button class="menu-button">⋮</button>
-                        <div class="dropdown-menu">
-                            <button class="edit-photo">Редагувати</button>
-                            <button class="delete-photo">Видалити</button>
-                        </div>`
+                            <button class="menu-button">...</button>
+                            <div class="dropdown-menu">
+                                <button class="edit-photo">Редагувати</button>
+                                <button class="delete-photo">Видалити</button>
+                            </div>
+                        </div></div>`
         });
     }
     catch(error){ console.error("Error fetching photos:", error) }

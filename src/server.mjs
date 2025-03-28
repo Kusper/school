@@ -100,6 +100,23 @@ app.delete("/api/deletePhoto/:photoID", async (req, res) => {
     }
 })
 
+//  Update
+app.patch("/api/updatePhoto", async (req, res) => {
+    const {photoID, photo_path, alt_text} = req.body;
+    console.log(photoID, photo_path, alt_text);
+    if( !photoID || !photo_path || !alt_text)
+        return res.status(400).json({message: "Missing required fields"});
+
+    try{
+        const results = await db.updatePhoto(photoID, photo_path, alt_text);
+        res.json({ updateSuccess: true, results: results });
+    }
+    catch(error){
+        console.error("Error updating photo: ", error);
+        res.status(500).json({ updateSuccess: false, message: "Internal server error" });
+    }
+})
+
 ///////////////////////////////////////
 ///             Schedule            ///
 ///////////////////////////////////////
@@ -176,7 +193,7 @@ app.delete("/api/deleteOur_teacher/:teacherID", async (req, res) => {
 //  Update
 app.patch("/api/updateOur_teacher", async (req, res) => {
     const {teacherID, picture_path, full_name, subject, description} = req.body;
-    console.log(teacherID, picture_path, full_name, subject, description);
+    // console.log(teacherID, picture_path, full_name, subject, description);
     if( !teacherID || !picture_path || !full_name || !subject || !description)
         return res.status(400).json({message: "Missing required fields"});
 

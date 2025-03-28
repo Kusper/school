@@ -65,6 +65,13 @@ export async function deletePhoto(photoID) {
     await connection.query("DELETE FROM `photo_gallery` WHERE `ID`= ? ", [photoID]);
 }
 
+//  Update
+export async function updatePhoto(photoID, photo_path, alt_text) {
+    const [results] = await connection.query("UPDATE `photo_gallery` SET `photo_path`= ? ,`alt_text`= ? WHERE `ID` = ?", 
+        [photo_path, alt_text, photoID]);
+    return results;
+}
+
 ///////////////////////////////////////
 ///           Our teacher           ///
 ///////////////////////////////////////
@@ -98,7 +105,7 @@ export async function deleteOurTeacher(teacherID) {
     await connection.query("DELETE FROM `our_teachers` WHERE `ID`= ? ", [teacherID]);
 }
 
-//  Insert
+//  Update
 export async function updateOurTeacher(teacherID, picture_path, full_name, subject, description) {
     const [results] = await connection.query("UPDATE `our_teachers` SET `picture_path`= ? ,`full_name`= ? ,`subject`= ? ,`description`= ? WHERE `ID` = ?", 
         [picture_path, full_name, subject, description, teacherID]);
