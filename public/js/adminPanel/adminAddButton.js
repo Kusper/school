@@ -47,7 +47,7 @@ addButton.addEventListener("click", () => {
                     <h2 class="section_advertisement-new_text_name">${type}</h2>
                     <form id="teacher-form" class="user-form">
                             <fieldset>
-                                <label for="picture_path">Фото виклада:</label>
+                                <label for="picture_path">Фото викладача:</label>
                                 <input type="text" id="picture_path" name="picture_path" placeholder="Введіть картинку" required autocomplete="picture_path">
                                 <label for="full_name">ПІБ:</label>
                                 <input type="text" id="full_name" name="full_name" placeholder="Іванов Іван Іванович" required autocomplete="full_name">
