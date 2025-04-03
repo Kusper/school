@@ -23,3 +23,7 @@ a {
 h1 {
   @include fluid-text(36, 12);
 }
+
+.active-pointer_header {
+  font-weight: bold;
+}

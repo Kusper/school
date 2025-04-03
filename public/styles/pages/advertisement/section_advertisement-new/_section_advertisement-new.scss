@@ -1,0 +1,30 @@
+.section_advertisement-new {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+
+  @include tablet {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &-img {
+    @include tablet{
+      margin: 0 auto;
+    }
+  }
+
+  &_text {
+
+    &_name {
+      text-align: center;
+    }
+
+    &_description {
+
+      @include laptop {
+        font-size: 1rem;
+      }
+    }
+  }
+}

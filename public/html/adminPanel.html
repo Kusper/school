@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Познайомтесь з нашими досвідченими викладачами, які допоможуть вам успішно підготуватися до екзаменів.">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Всезнайка - Оголошення</title>
+</head>
+<body>
+<header class="header" itemscope itemtype="https://schema.org/Organization">
+    <div class="header__inner container">
+        <a class="header__logo logo" href="/" itemprop="url">
+            <img
+                    class="logo__images"
+                    src="../images/home/logo__adminPanel.svg"
+                    alt="Всезнайка - найкращі з найкращих"
+                    loading="lazy"
+                    itemprop="logo" />
+        </a>
+        <nav class="header__menu hidden-mobile" itemscope itemtype="https://schema.org/SiteNavigationElement">
+            <ul class="header__menu-list">
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/advertisement" itemprop="url">Оголошення</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/gallery" itemprop="url">Фотогалерея</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/our_teachers" itemprop="url">Наші викладачі</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="/about_us" itemprop="url">Про нас</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__phone-number hidden-mobile" itemscope itemtype="https://schema.org/ContactPoint">
+            <div class="header__phone-number-icon">
+                <img
+                        class="phone__icon"
+                        src="../images/home/phone.svg"
+                        alt="Номер телефона"
+                        loading="lazy"
+                        itemprop="contactType" />
+            </div>
+            <span class="header__phone-number__text" itemprop="telephone">099 683 4331</span>
+        </div>
+        <button
+                class="button__burger-menu burger-button visible-mobile"
+                type="button"
+                onclick="mobileOverlay.showModal()">
+            <span class="visually-hidden">Відкрити меню</span>
+        </button>
+    </div>
+</header>
+<main class="content">
+        <div class="hero__shape-orange hidden-mobile"></div>
+        <div class="tab">
+            <button class="tab-button active" data-target="announcements">Оголошення</button>
+            <button class="tab-button" data-target="gallery">Фотогалерея</button>
+            <button class="tab-button" data-target="teachers">Наші учителі</button>
+        </div>
+        <button class="sticky-button">
+            <span class="sticky-button-plus-icon">+</span>
+        </button>
+        <div class="tab-content active" id="announcements">
+            <section class="container">
+                <header class="section__header-admin-panel">
+                    <h2 class="section__header-admin-panel">Додати
+                        <span class="section__header-color">оголошення</span>
+                    </h2>
+                </header>
+                <div class="section-admin-panel__content">
+                </div>
+            </section>
+        </div>
+        <div class="tab-content" id="gallery">
+            <section class="container">
+                <header class="section__header-admin-panel">
+                    <h2 class="section__header-admin-panel">Додати
+                        <span class="section__header-color">фото до фотогалереї</span>
+                    </h2>
+                </header>
+                <div class="section-admin-panel__content">
+                </div>
+            </section>
+        </div>
+        <div class="tab-content" id="teachers">
+            <section class="container">
+                <header class="section__header-admin-panel">
+                    <h2 class="section__header-admin-panel">Додати
+                        <span class="section__header-color">викладачів</span>
+                    </h2>
+                </header>
+                <div class="section-admin-panel__content">
+                </div>
+            </section>
+        </div>
+        <div class="advertisement__popup hidden-popup">
+            
+        </div>
+</main>
+<dialog class="mobile-overlay visible-mobile" id="mobileOverlay" aria-labelledby="mobileOverlayTitle" aria-hidden="true">
+    <form class="mobile-overlay__close-button-wrapper" method="dialog">
+        <button
+                class="mobile-overlay__close-button cross-button"
+                type="submit"
+                aria-label="Закрити меню">
+            <span class="visually-hidden">Закрити меню</span>
+        </button>
+    </form>
+    <div class="mobile-overlay__body">
+        <ul class="mobile-overlay__list">
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link" href="/">Оголошення</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link" href="/">Фото галерея</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link" href="/">Наші викладачі</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link" href="/">Про нас</a>
+            </li>
+        </ul>
+    </div>
+</dialog>
+</body>
+<script src="../styles/main/js/main.js" type="module"></script>
+<script src="../js/adminPanel/adminFetchAdvertisement.js" type="module"></script>
+<script src="../js/adminPanel/adminFetchGallery.js" type="module"></script>
+<script src="../js/adminPanel/adminFetchOurTeachers.js" type="module"></script>
+<script src="../js/adminPanel/adminAddButton.js" type="module"></script>
+<script src="../js/adminPanel/adminRequestHandle.js" type="module"></script>
+</html>

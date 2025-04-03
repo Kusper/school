@@ -1,0 +1,33 @@
+.section__values {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &-list {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    &-item {
+      border-radius: 80px;
+      box-shadow: 0px 4px 35px 0px rgba(26, 26, 26, 0.38);
+
+      &_text {
+        padding: 1rem;
+
+        @include tablet {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}
